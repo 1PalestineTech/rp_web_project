@@ -1,0 +1,9 @@
+@font-face{font-display:block;font-family:bootstrap-icons;src:url("fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6") format("woff2"),url("fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6") format("woff")}
+.bi::before,[class*=" bi-"]::before,[class^=bi-]::before{display:inline-block;font-family:bootstrap-icons!important;font-style:normal;font-weight:400!important;font-variant:normal;text-transform:none;line-height:1;vertical-align:-.125em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.bi-123::before{content:"\f67f"} 
+
+.bi-telegram::before{content:"\f5b3"}
+.bi-facebook::before{content:"\f344"}
+.bi-instagram::before{content:"\f437"}
+.bi-twitter::before{content:"\f5ef"}
+.bi-twitter-x::before{content:"\f8db"}
