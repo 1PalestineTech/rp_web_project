@@ -97,7 +97,7 @@ hr {
     z-index: 9999;
     display: block;
     position: fixed;
-    background: #e5355e;
+    background: #3ff999;;
     text-decoration: none;
     -moz-border-radius: 35px;
     -webkit-border-radius: 35px;
@@ -124,7 +124,7 @@ hr {
 }
 
 #return-to-top:hover {
-    background: #e5355e;
+    background: #3ff999;;
 }
 
 #return-to-top:hover i {
@@ -177,7 +177,7 @@ nav {
 
 .navbar.navbar-dark .navbar-nav .nav-item.active > .nav-link,
 .navbar.navbar-dark .navbar-nav .nav-item .nav-link:hover {
-    color: #f9e43f;
+    color: #3ff999;
     background-color: rgba(255, 255, 255, .1);
 }
 
@@ -376,7 +376,7 @@ nav {
     width: 94.8%;
     opacity: 0;
     transition: .5s ease;
-    background-color: rgba(254, 253, 49, 0.80);
+    background-color: rgba(63, 249, 153, 0.8);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -392,7 +392,7 @@ nav {
     width: 90%;
     opacity: 0;
     transition: .5s ease;
-    background-color: rgba(254, 253, 49, 0.80);
+    background-color: rgba(63, 249, 153, 0.8);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -651,8 +651,8 @@ nav {
 .blog .right-side .btn-primary:not(:disabled):not(.disabled):active,
 .blog .right-side .btn-primary:hover {
     color: #000;
-    background-color: #f9e43f;
-    border-color: #f9e43f;
+    background-color: #3ff999;
+    border-color: #3ff999;
 }
 
 /*====================
@@ -792,7 +792,7 @@ footer .img-thumbnail {
     width: 94.8%;
     opacity: 0;
     transition: .5s ease;
-    background-color: rgba(254, 253, 49, 0.80);
+    background-color: rgba(63, 249, 153, 0.8);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -808,7 +808,7 @@ footer .img-thumbnail {
     width: 90%;
     opacity: 0;
     transition: .5s ease;
-    background-color: rgba(254, 253, 49, 0.80);
+    background-color: rgba(63, 249, 153, 0.8);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1090,8 +1090,8 @@ footer .img-thumbnail {
 .blog-page .right-side .btn-primary:not(:disabled):not(.disabled):active,
 .blog-page .right-side .btn-primary:hover {
     color: #000;
-    background-color: #f9e43f;
-    border-color: #f9e43f;
+    background-color: #3ff999;
+    border-color: #3ff999;
 }
 
 .blog-page .bt {
@@ -1319,7 +1319,7 @@ footer .img-thumbnail {
     width: 94.8%;
     opacity: 0;
     transition: .5s ease;
-    background-color: rgba(254, 253, 49, 0.80);
+    background-color: rgba(63, 249, 153, 0.8);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1335,7 +1335,7 @@ footer .img-thumbnail {
     width: 90%;
     opacity: 0;
     transition: .5s ease;
-    background-color: rgba(254, 253, 49, 0.80);
+    background-color: rgba(63, 249, 153, 0.8);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1646,7 +1646,7 @@ footer .img-thumbnail {
     width: 94.8%;
     opacity: 0;
     transition: .5s ease;
-    background-color: rgba(254, 253, 49, 0.80);
+    background-color: rgba(63, 249, 153, 0.8);
     display: flex;
     align-items: center;
     justify-content: center;

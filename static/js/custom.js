@@ -13,3 +13,15 @@ $('#return-to-top').click(function () {
         scrollTop: 0 // Scroll to top of body
     }, 500);
 });
+function change_nav(){
+
+const url = window.location.href
+const capturingRegex = /http:\/\/localhost:5000\/(?<id>[A-Z]*).*/i;
+const found = url.match(capturingRegex);
+
+const ID = found.groups.id || 'index';
+const element=document.getElementById(ID);
+element.classList.add("active");
+
+}
+change_nav();
