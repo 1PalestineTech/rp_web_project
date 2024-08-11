@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block content %} 
+<section class="admin">
+    <div class="container">
+<!-- here-->
+	<form action = "/add_item" method = "post" enctype="multipart/form-data"> 
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Title</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="title" placeholder="Article title">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">description</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="description"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="formFile" class="form-label">input article text </label>
+            <input class="form-control" type="file" name="file" id="formFile">
+          </div>
+          <div class="mb-3">
+            <label for="formFileMultiple" class="form-label">input images</label>
+            <input class="form-control" type="file" name="images"  id="formFileMultiple" multiple>
+          </div>
+          <div class="form-group">
+            <label for="culture" class="form-label" style="color:rgb(252, 252, 250)">Culture</label>
+            <input type=radio name=type value='cultures' id="culture">  
+            <label for="article" class="form-label" style="color:rgb(252, 252, 250)">Article</label>
+            <input type=radio name=type value='articles' id="article">
+          </div>
+		<button type="submit" class="btn btn-primary green_btn py-2">Upload</button>
+        <!--
+	</form> 
+    <form action = "/add_cultulre" method = "post" enctype="multipart/form-data"> 
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Title</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="title" placeholder="Article title">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">description</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="description"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="formFile" class="form-label">Default file input example</label>
+            <input class="form-control" type="file" name="file" id="formFile">
+          </div>
+          <div class="mb-3">
+            <label for="formFileMultiple" class="form-label">Multiple files input example</label>
+            <input class="form-control" type="file" name="images"  id="formFileMultiple" multiple>
+          </div>
+		<button type="submit" class="btn btn-primary green_btn py-2">Upload</button>
+	</form> -->
+<!-- here-->
+</div>
+</section>
+{% endblock %}
