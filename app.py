@@ -19,7 +19,12 @@ Session(app)
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template("index.html")
+    db = sqlite3.connect('web_data.db')
+    cursor = db.execute("SELECT * FROM articles ORDER BY date DESC LIMIT 4")
+    articles = cursor.fetchall()
+    cursor = db.execute("SELECT * FROM cultures ORDER BY date DESC LIMIT 4")
+    cultures = cursor.fetchall()
+    return render_template("index.html",articles = articles,cultures=cultures)
 
 @app.route('/about')
 def about():
@@ -163,15 +168,17 @@ def logout():
 def admin_control():
     return render_template("admin_control.html")
 
-########################################### done 
-
 @app.route('/cultures')
 @app.route('/articles')
 def culture():
     db = sqlite3.connect('web_data.db')
-    cursor = db.execute("SELECT * FROM cultures ORDER BY date DESC LIMIT 10")
+    cursor = db.execute("SELECT * FROM +"+request.path[1:]+" ORDER BY date DESC LIMIT 10")
     rows = cursor.fetchall()
-    return render_template("articles.html",row=rows,dir=request.path)
+    return render_template("articles.html",rows=rows,dir=request.path)
+
+########################################### done 
+
+
 
 @app.route('/photography')
 def photography():

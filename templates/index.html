@@ -60,168 +60,60 @@
 <!--/.Carousel Wrapper-->
 
 <!-- Page Content -->
-
-<section id="portfolio">
+<section class="blog">
     <div class="container">
-        <h2>Recently Added Photographs</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-12 col-12">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 left-side">
+                <h2>Palestine Culture</h2>
+                {% for culture in cultures %}
                 <div class="row">
-                    <a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox" data-gallery="example-gallery" class="col-xl-6 col-md-4 box-1">
-                      <img src="https://unsplash.it/600.jpg?image=251" class="img-fluid">
-                        <div class="overlay">
-                         <img src="/static/images/comment.png" alt="plus-icon">
-                          <div class="text">Man standing on the middle of the road in the morning </div>
-                          <div class="count">45</div>
+                    
+                    <div class="col-md-6">
+                        <figure class="figure">
+                            <img src="static/cultures/{{culture[0]}}/cover.png" class="figure-img img-fluid" alt="{{culture[1]}}">
+                          
+                        </figure>
+                    </div>
+                    <div class="col-md-6">
+                        <h4><a href="{{dir}}/{{culture[0]}}">{{culture[1]}}</a></h4>
+                        <div class="btn-group">
+                            <p>{{culture[2]}}</p>
                         </div>
-                    </a>
-                    <a href="https://unsplash.it/1200/768.jpg?image=252" data-toggle="lightbox" data-gallery="example-gallery" class="col-xl-3 col-md-4 box-2">
-                     <img src="https://unsplash.it/600.jpg?image=252" class="img-fluid">
-                       <div class="overlay">
-                        <img src="images/comment.png" alt="plus-icon">
-                         <div class="text">Man standing on the middle of the road in the morning </div>
-                          <div class="count">45</div>
-                       </div>
-                    </a>
-                    <a href="https://unsplash.it/1200/768.jpg?image=253" data-toggle="lightbox" data-gallery="example-gallery" class="col-xl-3 col-md-4 box-2">
-                     <img src="https://unsplash.it/600.jpg?image=253" class="img-fluid">
-                       <div class="overlay">
-                        <img src="/static/images/comment.png" alt="plus-icon">
-                         <div class="text">Man standing on the middle of the road in the morning </div>
-                         <div class="count">45</div>
-                       </div>
-                    </a>
+                        <p>{{culture[3]}}</p>
+                    </div>
                 </div>
-                <div class="row">
-                    <a href="https://unsplash.it/1200/768.jpg?image=254" data-toggle="lightbox" data-gallery="example-gallery" class="col-xl-3 col-md-4 box-2">
-                      <img src="https://unsplash.it/600.jpg?image=254" class="img-fluid">
-                        <div class="overlay">
-                         <img src="/static/images/comment.png" alt="plus-icon">
-                          <div class="text">Man standing on the middle of the road in the morning </div>
-                          <div class="count">45</div>
-                        </div>
-                    </a>
-                    <a href="https://unsplash.it/1200/768.jpg?image=255" data-toggle="lightbox" data-gallery="example-gallery" class="col-xl-3 col-md-4 box-2">
-                     <img src="https://unsplash.it/600.jpg?image=255" class="img-fluid">
-                       <div class="overlay">
-                        <img src="/static/images/comment.png" alt="plus-icon">
-                         <div class="text">Man standing on the middle of the road in the morning </div>
-                          <div class="count">45</div>
-                       </div>
-                    </a>
-                    <a href="https://unsplash.it/1200/768.jpg?image=256" data-toggle="lightbox" data-gallery="example-gallery" class="col-xl-6 col-md-4 box-1">
-                     <img src="https://unsplash.it/600.jpg?image=256" class="img-fluid">
-                       <div class="overlay">
-                        <img src="/static/images/comment.png" alt="plus-icon">
-                         <div class="text">Man standing on the middle of the road in the morning </div>
-                         <div class="count">45</div>
-                       </div>
-                    </a>
-                </div>
-                <div class="row">
-                    <a href="https://unsplash.it/1200/768.jpg?image=257" data-toggle="lightbox" data-gallery="example-gallery" class="col-xl-6 col-md-4 box-1">
-                      <img src="https://unsplash.it/600.jpg?image=257" class="img-fluid">
-                        <div class="overlay">
-                         <img src="/static/images/comment.png" alt="plus-icon">
-                          <div class="text">Man standing on the middle of the road in the morning </div>
-                          <div class="count">45</div>
-                        </div>
-                    </a>
-                    <a href="https://unsplash.it/1200/768.jpg?image=258" data-toggle="lightbox" data-gallery="example-gallery" class="col-xl-3 col-md-4 box-2">
-                     <img src="https://unsplash.it/600.jpg?image=258" class="img-fluid">
-                       <div class="overlay">
-                        <img src="/static/images/comment.png" alt="plus-icon">
-                         <div class="text">Man standing on the middle of the road in the morning </div>
-                          <div class="count">45</div>
-                       </div>
-                    </a>
-                    <a href="https://unsplash.it/1200/768.jpg?image=259" data-toggle="lightbox" data-gallery="example-gallery" class="col-xl-3 col-md-4 box-2">
-                     <img src="https://unsplash.it/600.jpg?image=259" class="img-fluid">
-                       <div class="overlay">
-                        <img src="/static/images/comment.png" alt="plus-icon">
-                         <div class="text">Man standing on the middle of the road in the morning </div>
-                         <div class="count">45</div>
-                       </div>
-                    </a>
-                </div>
+                {% endfor %}
             </div>
+
         </div>
     </div>
 </section>
+
+
 
 <section class="blog">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 left-side">
                 <h2>Recent Articles</h2>
+                {% for article in articles %}
                 <div class="row">
+                    
                     <div class="col-md-6">
                         <figure class="figure">
-                            <a href="single.html"><img src="/static/images/banner-image-1.jpg" class="figure-img img-fluid" alt="A generic square placeholder image with rounded corners in a figure."></a>
-                            <figcaption class="figure-caption"> <img src="/static/images/comment.png" alt=""><span>45</span>
-                            </figcaption>
+                            <img src="static/articles/{{row[0]}}/cover.png" class="figure-img img-fluid" alt="{{article[1]}}">
+                          
                         </figure>
                     </div>
                     <div class="col-md-6">
-                        <h4><a href="single.html">Super and up for the comming model in shoot at newyork USA morning..</a></h4>
+                        <h4><a href="{{dir}}/{{article[0]}}">{{article[1]}}</a></h4>
                         <div class="btn-group">
-                            <a href="single.html" class="btn btn-danger">Ladakh, India</a>
-                            <button class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i> 345</button>
+                            <p>{{article[2]}}</p>
                         </div>
-                        <p>Posted on : 23.05.2016</p>
+                        <p>{{article[3]}}</p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <figure class="figure">
-                            <a href="single.html"><img src="/static/images/banner-image-2.jpg" class="figure-img img-fluid" alt="A generic square placeholder image with rounded corners in a figure."></a>
-                            <figcaption class="figure-caption"> <img src="/static/images/comment.png" alt=""><span>45</span>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-6">
-                        <h4><a href="single.html">Super and up for the comming model in shoot at newyork USA morning..</a></h4>
-                        <div class="btn-group">
-                            <a href="single.html" class="btn btn-danger">Ladakh, India</a>
-                            <button class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i> 345</button>
-                        </div>
-                        <p>Posted on : 23.05.2016</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <figure class="figure">
-                            <a href="single.html"><img src="/static/images/banner-image-3.jpg" class="figure-img img-fluid" alt="A generic square placeholder image with rounded corners in a figure."></a>
-                            <figcaption class="figure-caption"> <img src="/static/images/comment.png" alt=""><span>45</span>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-6">
-                        <h4><a href="single.html">Super and up for the comming model in shoot at newyork USA morning..</a></h4>
-                        <div class="btn-group">
-                            <a href="single.html" class="btn btn-danger">Ladakh, India</a>
-                            <button class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i> 345</button>
-                        </div>
-                        <p>Posted on : 23.05.2016</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <figure class="figure">
-                            <a href="single.html"><img src="/static/images/banner-image-4.jpg" class="figure-img img-fluid" alt="A generic square placeholder image with rounded corners in a figure."></a>
-                            <figcaption class="figure-caption"><img src="/static/images/comment.png" alt=""><span>45</span>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-6">
-                        <h4><a href="single.html">Super and up for the comming model in shoot at newyork USA morning..</a></h4>
-                        <div class="btn-group">
-                            <a href="single.html" class="btn btn-danger">Ladakh, India</a>
-                            <button class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i> 345</button>
-                        </div>
-                        <p>Posted on : 23.05.2016</p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
 
         </div>
