@@ -5,22 +5,22 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 left-side">
-                <h2>Palestine article</h2>
-                {% for article in articles %}
+                <h2>Palestine {{dir[1:]}}</h2>
+                {% for row in rows %}
                 <div class="row">
                     
                     <div class="col-md-6">
                         <figure class="figure">
-                            <img src="static/articles/{{article[0]}}/cover.png" class="figure-img img-fluid" alt="{{article[1]}}">
+                            <img src="static{{dir}}/{{row[0]}}/cover.png" class="figure-img img-fluid" alt="{{row[1]}}">
                           
                         </figure>
                     </div>
                     <div class="col-md-6">
-                        <h4><a href="/articles/{{article[0]}}">{{article[1]}}</a></h4>
+                        <h4><a href="{{dir}}/{{row[0]}}">{{row[1]}}</a></h4>
                         <div class="btn-group">
-                            <p>{{article[2]}}</p>
+                            <p>{{row[2]}}</p>
                         </div>
-                        <p>{{article[3]}}</p>
+                        <p>{{row[3]}}</p>
                     </div>
                 </div>
                 {% endfor %}
