@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -23,7 +24,7 @@
     <!--Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark cyan fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index">
+            <a class="navbar-brand" href="{{ url_for('index')}}">
             <img src="/static/images/nav-logo.png" alt="nav-logo">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,19 +33,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item" id="index">
-                        <a class="nav-link" href="index">Home</a>
+                        <a class="nav-link" href="{{ url_for('index')}}">Home</a>
                     </li>
                     <li class="nav-item" id="about">
-                        <a class="nav-link" href="about">About</a>
+                        <a class="nav-link" href="{{ url_for('about')}}">About</a>
                     </li>
                     <li class="nav-item" id="articles">
-                        <a class="nav-link" href="articles">Articles</a>
+                        <a class="nav-link" href="{{ url_for('articles')}}">Articles</a>
                     </li>
                     <li class="nav-item" id="culture">
-                        <a class="nav-link" href="cultures">Culture</a>
+                        <a class="nav-link" href="{{ url_for('cultures')}}">Culture</a>
                     </li>
                     <li class="nav-item" id="photography">
-                        <a class="nav-link" href="photography">Photography</a>
+                        <a class="nav-link" href="#">Photography</a>
                     </li>
                     <li class="nav-item" id="handala">
                         <a class="nav-link" href="#">handala</a>
@@ -63,17 +64,17 @@
                 <div class="row">
                     <div class="col-md-12">
                         <ul>
-                            <li><a href="index">Home</a></li>
+                            <li><a href="{{ url_for('index')}}">Home</a></li>
                             <li class="hidden">/</li>
-                            <li><a href="about">About-us</a></li>
+                            <li><a href="{{ url_for('about')}}">About-us</a></li>
                             <li class="hidden">/</li>
-                            <li><a href="culture">Culture</a></li>
+                            <li><a href="{{ url_for('cultures')}}">Culture</a></li>
                             <li class="hidden">/</li>
-                            <li><a href="photography">Photography</a></li>
+                            <li><a href="{{ url_for('articles')}}">Article</a></li>
                             <li class="hidden">/</li>
-                            <li><a href="articles">Article</a></li>
+                            <li><a href="#">Photography</a></li>
                             <li class="hidden">/</li>
-                            <li><a href="bot">Bot</a></li>
+                            <li><a href="./bot">Bot</a></li>
                         </ul>
                     </div>
                     <div class="col-md-12">

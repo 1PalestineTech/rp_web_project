@@ -5,16 +5,16 @@
 <!-- here-->
 	<form action = "/add_item" method = "post" enctype="multipart/form-data"> 
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Title</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" name="title" placeholder="Article title">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="Article title">
           </div>
           <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">description</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="desciption"></textarea>
+            <label for="description" class="form-label">description</label>
+            <textarea class="form-control" id="description" rows="5" name="desciption"></textarea>
           </div>
           <div class="mb-3">
-            <label for="formFile" class="form-label">input article text </label>
-            <input class="form-control" type="file" name="file" id="formFile">
+            <label for="formFile" class="form-label">input article text (html format)</label>
+            <textarea class="form-control" id="formFile" rows="40" name="article_text"></textarea>
           </div>
           <div class="mb-3">
             <label for="formFileMultiple" class="form-label">input images</label>
