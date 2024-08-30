@@ -50,7 +50,7 @@ def login():
 
 
 #                                        LOGOUT
-@app.route('/logout', methods = ['POST'])
+@app.route('/logout', methods = ['POST','GET'])
 def logout():
     session.clear()
     return redirect('/')
