@@ -80,7 +80,7 @@ def change_password():
         db.execute("UPDATE admins SET password = (?) WHERE id = (?)",(hs,session.get("user_id")))
         db.commit()
         
-        return redirect("/admin_control")
+        return redirect("/")
     else :
         return render_template("change_password.html")
 
@@ -110,7 +110,7 @@ def add_admin():
         hs=generate_password_hash(password)
         db.execute("INSERT INTO admins (id,username,password) VALUES ((?),(?),(?)) ",(id, username, hs))
         db.commit()
-        return redirect('/admin_control')
+        return redirect('/remove_admin')
     else:
         return render_template("add_admin.html")
 
