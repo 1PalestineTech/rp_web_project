@@ -1,5 +1,4 @@
-
-from flask import Flask, render_template,request,redirect,session
+from flask import Flask, render_template, request, redirect, session
 import re
 from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -9,8 +8,7 @@ import os.path
 import os
 import shutil
 
-    
-from src.utils import login_required,head_admin
+from src.utils import login_required, head_admin
 app = Flask(__name__)
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
@@ -300,6 +298,6 @@ def page(page,id="empty"):
 
 
 
-if __name__ == '__main__':
-   app.run(host='0.0.0.0',port = "5000")
+if __name__ == "__main__":
+   app.run(host='0.0.0.0')
 
