@@ -7,7 +7,7 @@ import shortuuid
 import re
 from time import sleep 
 
-for index in range(1325,-2,-1):
+for index in range(5,-2,-1):
     try:
         data = requests.post("https://www.quora.com/graphql/gql_para_POST?q=UserProfileAnswersMostRecent_RecentAnswers_Query", headers = {
             "accept": "*/*",
@@ -126,19 +126,17 @@ for index in range(1325,-2,-1):
         html
 
         id = str(shortuuid.ShortUUID(alphabet="013456789").random(length=20))
-        dir="articles"
-        parent_dir = "./static/"+dir
+        parent_dir = "./static/articles"
         path = os.path.join(parent_dir, id) 
         os.mkdir(path) 
 
         data = html
         path2 = os.path.join(path, "index.txt")
         with open( path2  ,'w') as fl:
-                #data=re.sub("=(?!.*http)('|\")", '="/static/'+dir+'/'+id+'/', data)
                 fl.write(data)
         db = sqlite3.connect('web_data.db')
         desciption = "Article made by handala "
-        db.execute("INSERT INTO elements (id,title,desciption,type) VALUES ((?),(?),(?),(?)) ",(id, title , desciption,dir))
+        db.execute("INSERT INTO Articles (id,title,desciption) VALUES ((?),(?),(?)) ",(id, title , desciption))
         db.commit()
     except:
         print(index)

@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palestine Through Time: An Interactive Historical Journey</title>
+    
+    <!-- Essential Meta Tags -->
+    <meta name="description" content="Explore Palestine's rich 4000-year history through an interactive timeline. Discover cultural heritage, historical events, and architectural wonders.">
+    <meta name="keywords" content="Palestine history, interactive timeline, Palestinian culture, historical events">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Palestine Through Time">
+    <meta property="og:description" content="An immersive journey through 4000 years of Palestinian history">
+    <meta property="og:type" content="website">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="/static/css/timeline.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- GSAP and ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+
+    
+    <link rel="prev" href="index">
+    <!-- Live Reload Script -->
+    <script src="/static/js/livereload.js">
+    </script>
+    <!-- Your Timeline Script -->
+    <script src="/static/js/timeline.js"></script>
+</head>
+<body>
+    <!-- Immersive Intro Section -->
+    <div class="intro-experience">
+        <div class="intro-parallax">
+            <h1 class="main-title">Palestine Through Time</h1>
+            <p class="subtitle">4000 Years of History, Culture & Heritage</p>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to Explore</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </div>
+
+    <!-- Main Timeline Container -->
+    <div class="timeline-wrapper">
+        <!-- Interactive Timeline Navigation -->
+        <nav class="main-nav">
+            <a href="index" class="home-link">
+                <span class="home-icon">←</span>
+                <span>Back to Main</span>
+            </a>
+        </nav>
+
+        <nav class="timeline-nav">
+            <div class="era-bubbles">
+                <!-- Era navigation bubbles -->
+                <div class="era-bubble" data-era="ancient" data-year="-4000">
+                    <span class="era-icon">🏺</span>
+                    <span class="era-label">Ancient</span>
+                </div>
+                <!-- More era bubbles... -->
+            </div>
+            
+            <!-- Progress Visualization -->
+            <div class="timeline-progress">
+                <div class="progress-line"></div>
+                <div class="progress-marker"></div>
+            </div>
+        </nav>
+
+        <!-- Central Timeline Line -->
+        <div class="timeline-central-line">
+            <div class="time-marker" data-year="-4000">4000 BCE</div>
+            <!-- More time markers... -->
+        </div>
+
+        <!-- Timeline Content -->
+        <div class="timeline-container">
+            <!-- Section 1: Early Canaanite Period -->
+            <section class="timeline-era" data-era="early-canaanite">
+                <div class="era-header">
+                    <h2>Early Canaanite Period</h2>
+                    <span class="era-year">4000-3000 BCE</span>
+                </div>
+                
+                <div class="timeline-event left">
+                    <div class="event-content">
+                        <div class="media-showcase">
+                            <div class="primary-media">
+                                <img src="/static/Images/canaanite-city.jpg" alt="Early Canaanite Settlement">
+                                <div class="media-overlay">
+                                    <button class="explore-btn">Explore in 3D</button>
+                                </div>
+                            </div>
+                            
+                            <div class="artifact-gallery">
+                                <!-- 3D viewable artifacts -->
+                                <div class="artifact-viewer" data-model="pottery">
+                                    <div class="artifact-controls">
+                                        <button class="rotate">Rotate</button>
+                                        <button class="zoom">Zoom</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="event-info">
+                            <h3>Dawn of Palestinian Civilization</h3>
+                            <div class="info-content">
+                                <p class="main-description">
+                                    The earliest urban settlements emerge in Palestine, marking the beginning of a rich cultural heritage.
+                                </p>
+                                
+                                <div class="interactive-elements">
+                                    <div class="population-data">
+                                        <h4>Population Centers</h4>
+                                        <div class="interactive-map">
+                                            <!-- Interactive settlement map -->
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="cultural-achievements">
+                                        <h4>Cultural Developments</h4>
+                                        <ul class="achievement-list">
+                                            <li>Agricultural Innovation</li>
+                                            <li>Urban Planning</li>
+                                            <li>Trade Networks</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Middle Bronze Age -->
+            <section class="timeline-era" data-era="middle-bronze">
+                <div class="timeline-event right">
+                    <div class="event-content">
+                        <div class="media-showcase">
+                            <div class="primary-media">
+                                <img src="/static/Images/og-image.jpg" alt="Bronze Age Palestine">
+                                <div class="media-overlay">
+                                    <div class="era-stats">
+                                        <div class="stat-item" data-value="50">
+                                            <span class="stat-number">50+</span>
+                                            <span class="stat-label">Urban Centers</span>
+                                        </div>
+                                    </div>
+                                    <button class="explore-btn">Explore Cities</button>
+                                </div>
+                            </div>
+                            
+                            <div class="interactive-map">
+                                <div class="map-container" data-period="bronze-age">
+                                    <!-- Interactive Bronze Age Map -->
+                                </div>
+                                <div class="map-controls">
+                                    <button data-layer="settlements">Settlements</button>
+                                    <button data-layer="trade">Trade Routes</button>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="event-info">
+                            <h3>Urban Development & Trade</h3>
+                            <span class="era-year">3000-2000 BCE</span>
+                            <div class="expandable-content">
+                                <p>Significant urban development and establishment of trade networks.</p>
+                                <div class="cultural-showcase">
+                                    <div class="artifact-carousel">
+                                        <!-- Interactive artifact showcase -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 3: Late Bronze Age -->
+            <section class="timeline-era" data-era="late-bronze">
+                <div class="timeline-event left">
+                    <div class="event-content">
+                        <div class="media-showcase">
+                            <div class="primary-media">
+                                <img src="/static/Images/canaanite-city.jpg" alt="Late Bronze Age">
+                                <div class="media-overlay">
+                                    <div class="3d-viewer" data-model="ancient-city">
+                                        <!-- 3D City Reconstruction -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event-info">
+                            <h3>Cultural Flourishing</h3>
+                            <span class="era-year">2000-1550 BCE</span>
+                            <div class="cultural-elements">
+                                <div class="element-card" data-category="architecture">
+                                    <!-- Interactive architecture card -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 4: Iron Age -->
+            <section class="timeline-era" data-era="iron-age">
+                <div class="timeline-event right">
+                    <div class="event-content">
+                        <div class="media-showcase">
+                            <div class="primary-media">
+                                <img src="/static/Images/og-image.png" alt="Iron Age Palestine">
+                                <div class="interactive-overlay">
+                                    <div class="cultural-development-tracker">
+                                        <!-- Interactive development timeline -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event-info">
+                            <h3>Technological Advancement</h3>
+                            <span class="era-year">1550-586 BCE</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 5: Persian Period -->
+            <section class="timeline-era" data-era="persian">
+                <div class="timeline-event left">
+                    <div class="event-content">
+                        <div class="media-showcase">
+                            <div class="primary-media">
+                                <img src="/static/Images/og-image.svg" alt="Persian Period">
+                                <div class="cultural-exchange-viewer">
+                                    <!-- Interactive cultural exchange visualization -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event-info">
+                            <h3>Cultural Exchange Era</h3>
+                            <span class="era-year">586-332 BCE</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 6: Hellenistic Period -->
+            <section class="timeline-era" data-era="hellenistic">
+                <div class="timeline-event right">
+                    <div class="event-content">
+                        <div class="media-showcase">
+                            <div class="primary-media">
+                                <img src="/static/Images/timeline/1917/jerusalem-old-photo.jpg" alt="Hellenistic Period">
+                                <div class="architectural-overlay">
+                                    <!-- Interactive architectural features -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event-info">
+                            <h3>Hellenistic Influence</h3>
+                            <span class="era-year">332-63 BCE</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 7: Roman Period -->
+            <section class="timeline-era" data-era="roman">
+                <div class="timeline-event left">
+                    <div class="event-content">
+                        <div class="media-showcase">
+                            <div class="primary-media">
+                                <img src="/static/Images/timeline/1917/jerusalem-old-photo.jpg" alt="Roman Period">
+                                <div class="architectural-viewer">
+                                    <!-- 3D architectural reconstructions -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event-info">
+                            <h3>Roman Era</h3>
+                            <span class="era-year">63 BCE-324 CE</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 8: Byzantine Period -->
+            <section class="timeline-era" data-era="byzantine">
+                <div class="timeline-event right">
+                    <div class="event-content">
+                        <div class="media-showcase">
+                            <div class="primary-media">
+                                <img src="/static/Images/timeline/1917/british-mandate.jpg" alt="Byzantine Period">
+                                <div class="cultural-overlay">
+                                    <!-- Interactive cultural elements -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event-info">
+                            <h3>Byzantine Era</h3>
+                            <span class="era-year">324-636 CE</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 9: Islamic Golden Age -->
+            <section class="timeline-era" data-era="islamic-golden">
+                <div class="timeline-event left">
+                    <div class="event-content">
+                        <div class="media-showcase">
+                            <div class="primary-media">
+                                <img src="/static/Images/timeline/1948/palestinian-villages.jpg" alt="Islamic Golden Age">
+                                <div class="interactive-overlay">
+                                    <div class="architectural-explorer">
+                                        <div class="hotspot" data-feature="dome-of-rock">
+                                            <span class="hotspot-dot"></span>
+                                            <div class="hotspot-content">
+                                                <h4>Dome of the Rock</h4>
+                                                <p>Architectural masterpiece built in 691 CE</p>
+                                                <button class="view-3d">View in 3D</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cultural-achievements">
+                                <div class="achievement-slider">
+                                    <div class="achievement-card" data-category="science">
+                                        <h4>Scientific Advances</h4>
+                                        <div class="interactive-timeline"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event-info">
+                            <h3>Islamic Golden Age</h3>
+                            <span class="era-year">636-1099 CE</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 10: Crusader Period -->
+            <section class="timeline-era" data-era="crusader">
+                <div class="timeline-event right">
+                    <div class="event-content">
+                        <div class="media-showcase">
+                            <div class="primary-media">
+                                <img src="/static/Images/timeline/1948/nakba-exodus.jpg" alt="Crusader Period">
+                                <div class="battle-map-overlay">
+                                    <div class="interactive-map" data-period="crusader">
+                                        <!-- Interactive battle maps and territory changes -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event-info">
+                            <h3>Crusader Period</h3>
+                            <span class="era-year">1099-1187 CE</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 11: Ayyubid Period -->
+            <section class="timeline-era" data-era="ayyubid">
+                <div class="timeline-event left">
+                    <div class="event-content">
+                        <div class="media-showcase">
+                            <div class="primary-media">
+                                <img src="/static/Images/timeline/1967/displacement.jpg" alt="Ayyubid Period">
+                                <div class="cultural-revival-showcase">
+                                    <!-- Interactive cultural elements -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event-info">
+                            <h3>Ayyubid Dynasty</h3>
+                            <span class="era-year">1187-1250 CE</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 12: Mamluk Period -->
+            <section class="timeline-era" data-era="mamluk">
+                <div class="timeline-event right">
+                    <div class="event-content">
+                        <div class="media-showcase">
+                            <div class="primary-media">
+                                <img src="/static/Images/timeline/1967/jerusalem-1967.jpg" alt="Mamluk Period">
+                                <div class="architectural-showcase">
+                                    <div class="building-explorer" data-period="mamluk">
+                                        <!-- 3D architectural models -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event-info">
+                            <h3>Mamluk Era</h3>
+                            <span class="era-year">1250-1516 CE</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 13: Ottoman Period -->
+            <section class="timeline-era" data-era="ottoman">
+                <div class="timeline-event left">
+                    <div class="event-content">
+                        <div class="media-showcase">
+                            <div class="primary-media">
+                                <img src="/static/Images/timeline/modern/cultural-preservation.jpg" alt="Ottoman Period">
+                                <div class="cultural-development">
+                                    <div class="development-tracker">
+                                        <!-- Interactive development timeline -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event-info">
+                            <h3>Ottoman Era</h3>
+                            <span class="era-year">1516-1917</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 14: British Mandate -->
+            <section class="timeline-era" data-era="british-mandate">
+                <div class="timeline-event right">
+                    <div class="event-content">
+                        <div class="media-showcase">
+                            <div class="primary-media">
+                                <img src="/static/Images/timeline/1917/british-mandate.jpg" alt="British Mandate">
+                                <div class="demographic-changes">
+                                    <div class="population-graph">
+                                        <!-- Interactive population statistics -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event-info">
+                            <h3>British Mandate Period</h3>
+                            <span class="era-year">1917-1948</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 15: 1948 Era -->
+            <section class="timeline-era" data-era="1948">
+                <div class="timeline-event left">
+                    <div class="event-content">
+                        <div class="media-showcase">
+                            <div class="primary-media">
+                                <img src="/static/Images/timeline/1948/nakba-exodus.jpg" alt="1948 Events">
+                                <div class="testimonial-overlay">
+                                    <div class="personal-stories">
+                                        <!-- Interactive testimonials -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event-info">
+                            <h3>1948: Major Historical Events</h3>
+                            <span class="era-year">1948</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 16: Post-1948 Period -->
+            <section class="timeline-era" data-era="post-1948">
+                <div class="timeline-event right">
+                    <div class="event-content">
+                        <div class="media-showcase">
+                            <div class="primary-media">
+                                <img src="/static/Images/timeline/1948/refugee-camps.jpg" alt="Post-1948 Period">
+                                <div class="demographic-changes">
+                                    <!-- Interactive demographic visualizations -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event-info">
+                            <h3>Post-1948 Developments</h3>
+                            <span class="era-year">1948-1967</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 17: 1967 Era -->
+            <section class="timeline-era" data-era="1967">
+                <div class="timeline-event left">
+                    <div class="event-content">
+                        <div class="media-showcase">
+                            <div class="primary-media">
+                                <img src="/static/Images/timeline/1967/june-war.jpg" alt="1967 Events">
+                                <div class="geographic-changes">
+                                    <!-- Interactive map showing territorial changes -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event-info">
+                            <h3>1967: Significant Changes</h3>
+                            <span class="era-year">1967</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 18: First Intifada -->
+            <section class="timeline-era" data-era="first-intifada">
+                <div class="timeline-event right">
+                    <div class="event-content">
+                        <div class="media-showcase">
+                            <div class="primary-media">
+                                <img src="/static/Images/timeline/modern/urban-palestine.jpg" alt="First Intifada">
+                                <div class="movement-timeline">
+                                    <!-- Interactive timeline of events -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event-info">
+                            <h3>First Intifada</h3>
+                            <span class="era-year">1987-1993</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 19: Oslo Accords Period -->
+            <section class="timeline-era" data-era="oslo">
+                <div class="timeline-event left">
+                    <div class="event-content">
+                        <div class="media-showcase">
+                            <div class="primary-media">
+                                <img src="/static/Images/timeline/modern/cultural-preservation.jpg" alt="Oslo Accords">
+                                <div class="political-developments">
+                                    <!-- Interactive political timeline -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event-info">
+                            <h3>Oslo Accords Period</h3>
+                            <span class="era-year">1993-2000</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 20: Second Intifada -->
+            <section class="timeline-era" data-era="second-intifada">
+                <div class="timeline-event right">
+                    <div class="event-content">
+                        <div class="media-showcase">
+                            <div class="primary-media">
+                                <img src="/static/Images/timeline/modern/olive-harvesting.jpg" alt="Second Intifada">
+                                <div class="event-timeline">
+                                    <!-- Interactive event timeline -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event-info">
+                            <h3>Second Intifada</h3>
+                            <span class="era-year">2000-2005</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 21: Contemporary Period -->
+            <section class="timeline-era" data-era="contemporary">
+                <div class="timeline-event left">
+                    <div class="event-content">
+                        <div class="media-showcase">
+                            <div class="primary-media">
+                                <img src="/static/Images/timeline/modern/cultural-preservation.jpg" alt="Contemporary Palestine">
+                                <div class="cultural-preservation">
+                                    <!-- Interactive cultural preservation showcase -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event-info">
+                            <h3>Contemporary Palestine</h3>
+                            <span class="era-year">2005-Present</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Timeline End -->
+        </div>
+            
+            <!-- Interactive Features Modal -->
+            <div class="feature-modal">
+                <div class="modal-content">
+                    <button class="modal-close">&times;</button>
+                    <div class="modal-body">
+                        <!-- Dynamic content inserted here -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation Controls -->
+            <nav class="timeline-navigation">
+                <button class="nav-btn prev">Previous Era</button>
+                <button class="nav-btn next">Next Era</button>
+            </nav>
+            
+      </div>
+            
+    <!-- Scripts -->
+    <script src="/static/js/timeline.js"></script>
+</body>
+</html>   

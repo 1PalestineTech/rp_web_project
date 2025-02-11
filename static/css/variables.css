@@ -1,0 +1,85 @@
+/* variables.css */
+:root {
+    /* Colors */
+    --primary-color: #2C3E50;
+    --secondary-color: #E74C3C;
+    --accent-color: #3498DB;
+    --background-light: #FFFFFF;
+    --background-dark: #1A1A1A;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --text-light: #FFFFFF;
+    
+    /* Typography */
+    --font-primary: 'Merriweather', serif;
+    --font-secondary: 'Source Sans Pro', sans-serif;
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+    
+    /* Spacing */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 2.5rem;
+    --space-3xl: 3rem;
+    
+    /* Border Radius */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 1rem;
+    --radius-full: 9999px;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-normal: 300ms ease;
+    --transition-slow: 500ms ease;
+    --transition-bounce: 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Z-index layers */
+    --z-negative: -1;
+    --z-elevate: 1;
+    --z-sticky: 100;
+    --z-drawer: 200;
+    --z-modal: 300;
+    --z-popup: 400;
+    
+    /* Container widths */
+    --container-sm: 640px;
+    --container-md: 768px;
+    --container-lg: 1024px;
+    --container-xl: 1280px;
+    
+    /* Grid */
+    --grid-gap: 1.5rem;
+    --grid-columns: 12;
+}
+
+/* Dark theme variables */
+[data-theme="dark"] {
+    --background-light: #1A1A1A;
+    --background-dark: #000000;
+    --text-primary: #FFFFFF;
+    --text-secondary: #CCCCCC;
+}
+
+/* High contrast theme */
+[data-theme="high-contrast"] {
+    --primary-color: #000000;
+    --secondary-color: #FFFFFF;
+    --accent-color: #FF0000;
+    --text-primary: #000000;
+    --text-secondary: #000000;
+}

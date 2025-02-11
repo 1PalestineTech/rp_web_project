@@ -1,0 +1,62 @@
+/* stories.css */
+.stories-container {
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(to right, var(--bg-color), white);
+}
+
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    padding: var(--spacing-md);
+}
+
+.story-card {
+    background: white;
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.story-card:hover {
+    transform: translateY(-5px);
+}
+
+.story-header {
+    padding: var(--spacing-md);
+    background: var(--primary-color);
+    color: white;
+}
+
+.story-content {
+    padding: var(--spacing-md);
+    min-height: 150px;
+}
+
+.story-footer {
+    padding: var(--spacing-md);
+    border-top: 1px solid var(--light-gray);
+}
+
+.read-story-btn {
+    width: 100%;
+    padding: var(--spacing-sm);
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.read-story-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .stories-grid {
+        grid-template-columns: 1fr;
+    }
+}
