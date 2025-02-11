@@ -7,7 +7,7 @@ import shortuuid
 import re
 from time import sleep 
 
-for index in range(5,-2,-1):
+for index in range(1325,-2,-1):
     try:
         data = requests.post("https://www.quora.com/graphql/gql_para_POST?q=UserProfileAnswersMostRecent_RecentAnswers_Query", headers = {
             "accept": "*/*",
