@@ -341,7 +341,7 @@ def articles():
     print(request.path[1:])
     cursor = db.execute("SELECT * FROM Articles ORDER BY date DESC")
     rows = cursor.fetchall()
-    return render_template("articles.html",rows=rows,dir=request.path)
+    return render_template("articles.html",rows=rows)
 
 
 
