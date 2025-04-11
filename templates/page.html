@@ -1,16 +1,14 @@
 
 {% extends "layout.html" %}
 {% block content %}
+<div class="article_holder">
+    <div class="article_post">
 
-    <section class="blog-single">
-        <div class="container">
-            <div class="main-contant">
                 <h2>{{title}}</h2>
-                {{data|safe}}
-                <hr/>
+                <div>{{data|safe}}</div>
+                
             
 
-            </div>
-        </div>
-    </section>
+                </div>
+</div>
 {% endblock %}

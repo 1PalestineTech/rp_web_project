@@ -4,20 +4,10 @@
 
 {% block content %}
 <section class="admin">
-
-<div class="container">
-<div class="col d-flex justify-content-center ">
-
-    <div class="card" style="width: 50rem;">
-        <img src="/static/images/error.png" class="figure-img border img-fluid rounded" alt="{{ top }}" title="{{ top }}">
-        <div class="card-body">
-          <h5 class="card-title">Error code : {{top}}</h5>
-          <p class="card-text">{{ bottom }}</p>
+  <div class="admin_error">
+          <h2>Error code : {{top}}</h2>
+          <span >{{ bottom }}</p>
           <a href="{{url}}" class="btn btn-primary green_btn"><span>Try again</span></a>
         </div>
-      </div>
- 
-    </div>
-    </div>
 </section>
 {% endblock %}

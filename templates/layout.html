@@ -9,90 +9,41 @@
     <meta property="og:title" content="Palestinian History | Interactive Educational Journey">
     <meta property="og:description" content="Explore Palestinian heritage through interactive timelines, galleries, and stories.">
     <meta property="og:image" content="/static/images/og-image.jpg">
-    
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/static/images/favicon.png">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="/static/css/main.css">
-    
-    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-    <title>Palestinian History | Interactive Educational Journey</title>
+    <link rel="icon" type="image/ico" href="/static/icons/favicon.ico">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>1Palestine</title>
 </head>
-<body>
-    <nav class="main-nav">
-        <div class="logo">
-            <h1>Palestinian History</h1>
-            <span class="logo-accent">التاريخ الفلسطيني</span>
-        </div>
-        <ul class="nav-links">
-            <li>
-                <a href="timeline.html" class="nav-link"> <!-- Updated href -->
-                    <span class="nav-icon">📅</span>
-                    <span class="nav-text">Timeline</span>
-                </a>
-            </li>
-            <li>
-                <a href="#gallery" class="nav-link">
-                    <span class="nav-icon">🖼️</span>
-                    <span class="nav-text">Gallery</span>
-                </a>
-            </li>
-            <li>
-                <a href="#stories" class="nav-link">
-                    <span class="nav-icon">📖</span>
-                    <span class="nav-text">Stories</span>
-                </a>
-            </li>
-            <li>
-                <a href="#about" class="nav-link">
-                    <span class="nav-icon">ℹ️</span>
-                    <span class="nav-text">About</span>
-                </a>
-            </li>
-        </ul>
+<body dir="ltr">
+
+    
+    <nav class="nav_bar">
+      <div class="nav_menu"><span class="logo"><img class="img_logo" src="../static/Images/colored_logo.png"></span><span class="dp_btn"></span></div>
+      <div class="nav_items"><span class="nav_link"><a href="index">Home</a></span><a href="#"><img class="nav_img" src="../static/Images/icons/twitter.png"></a></div>
+      <div class="nav_items"><span class="nav_link"><a href="timeline">Timeline</a></span><a href="#"><img class="nav_img" src="../static/Images/icons/instagram.png"></a></div>
+      <div class="nav_items"><span class="nav_link"><a href="articles">Articles</a></span><a href="#"><img class="nav_img" src="../static/Images/icons/tiktok.png"></a></div>
+      <div class="nav_items"><span class="nav_link"><a href="#">Stories</a></span><a href="#"><img class="nav_img" src="../static/Images/icons/reddit.png"></a></div>
+      <div class="nav_items"><span class="nav_link"><a href="about">About</a></span><a href="#"><img class="nav_img" src="../static/Images/icons/quora.png"></a></div>
     </nav>
-
     {% block content %}{% endblock %}
+<footer class="footer">
+  <span class="footer_logo">
+    <img class="footer_img" src="/static/Images/white_logo.png">
+  </span>
+  <span class="social">
+    <a href="#"><img src="/static/Images/icons/quora.png"></a>
+    <a href="#"><img src="/static/Images/icons/facebook.png"></a>
+    <a href="#"><img src="/static/Images/icons/reddit.png"></a>
+    <a href="#"><img src="/static/Images/icons/tiktok.png"></a>
+    <a href="#"><img src="/static/Images/icons/instagram.png"></a>
+    <a href="#"><img src="/static/Images/icons/twitter.png"></a>
+  </span>
 
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Navigation</h3>
-                    <ul>
-                        <li><a href="#timeline">Timeline</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#stories">Stories</a></li>
-                        <li><a href="#about">About</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Connect</h3>
-                    <p>Stay updated with our latest historical content and discoveries.</p>
-                    <div class="footer-social">
-                        <a href="#" aria-label="Follow us on Twitter">Twitter</a>
-                        <a href="#" aria-label="Follow us on Instagram">Instagram</a>
-                        <a href="#" aria-label="Follow us on Facebook">Facebook</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Palestinian History Project. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+  
+</footer>
 
 
-<script src="/static/js/utils/animations.js"></script>
-<script src="/static/js/utils/helpers.js"></script>
-<script src="/static/js/main.js"></script>
-<script src="/static/js/bootstrap.bundle.min.js"></script>
+<script src="/static/js/script.js">
+</script>
 </body>
 </html>

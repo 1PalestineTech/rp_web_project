@@ -14,10 +14,7 @@ CREATE TABLE Writters (
     FOREIGN KEY (id) REFERENCES Users(id)
 );
 
-CREATE TABLE Editors (
-    id TEXT,
-    FOREIGN KEY (id) REFERENCES Users(id)
-);
+
 CREATE TABLE Articles (
     id TEXT,
     title TEXT NOT NULL,
@@ -37,7 +34,7 @@ CREATE TABLE Categorize (
     FOREIGN KEY (tag_id) REFERENCES Tags(id)
 );
 
-CREATE TABLE Action (
+CREATE TABLE Actions (
     article_id TEXT,
     user_id TEXT,
     type TEXT CHECK (type = 'write' OR type = 'edit' OR type = 'delete'),

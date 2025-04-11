@@ -1,267 +1,32 @@
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover the rich tapestry of Palestinian history through an interactive educational journey. Explore cultural heritage, historical timelines, and compelling stories.">
+{% extends "layout.html" %}
+{% block content %}
+<div class="slider_timeline">
+    <span class="arrow left_arrow" onclick="previous_slide()"></span>
+    <a href="timeline/1" class="slide_img"></a>
+    <a href="timeline/2" class="slide_img"></a>
+    <a href="timeline/3" class="slide_img"></a>
+    <a href="timeline/4" class="slide_img"></a>
+    <a href="timeline/5" class="slide_img"></a>
+    <a href="timeline/6" class="slide_img"></a>
+    <a href="timeline/7" class="slide_img"></a>
+    <a href="timeline/8" class="slide_img"></a>
+    <a href="timeline/9" class="slide_img"></a>
     
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="Palestinian History | Interactive Educational Journey">
-    <meta property="og:description" content="Explore Palestinian heritage through interactive timelines, galleries, and stories.">
-    <meta property="og:image" content="/static/images/og-image.jpg">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/static/images/favicon.png">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="/static/css/main.css">
-
-    
-    <title>Palestinian History | Interactive Educational Journey</title>
-</head>
-<body>
-    <nav class="main-nav">
-        <div class="logo">
-            <h1>Palestinian History</h1>
-            <span class="logo-accent">التاريخ الفلسطيني</span>
-        </div>
-        <ul class="nav-links">
-            <li>
-                <a href="timeline" class="nav-link"> <!-- Updated href -->
-                    <span class="nav-icon">📅</span>
-                    <span class="nav-text">Timeline</span>
-                </a>
-            </li>
-            <li>
-                <a href="#gallery" class="nav-link">
-                    <span class="nav-icon">🖼️</span>
-                    <span class="nav-text">Gallery</span>
-                </a>
-            </li>
-            <li>
-                <a href="#stories" class="nav-link">
-                    <span class="nav-icon">📖</span>
-                    <span class="nav-text">Stories</span>
-                </a>
-            </li>
-            <li>
-                <a href="#about" class="nav-link">
-                    <span class="nav-icon">ℹ️</span>
-                    <span class="nav-text">About</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-
-<header class="main-header">
-    <div class="header-content">
-        <nav class="main-nav">
-            <div class="logo">
-                <h1>Palestinian History</h1>
-                <span class="logo-accent">التاريخ الفلسطيني</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#timeline" class="nav-link">Timeline</a></li>
-                <li><a href="#gallery" class="nav-link">Gallery</a></li>
-                <li><a href="#stories" class="nav-link">Stories</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-            </ul>
-        </nav>
-        
-        <div class="hero-section">
-            <div class="hero-text">
-                <h2 class="hero-title">Discovering Palestinian Heritage</h2>
-                <p class="hero-description">Journey through time to explore the rich history and cultural heritage of Palestine</p>
-            </div>
-            <div class="hero-cta">
-                <a href="#explore" class="cta-button primary">Begin Journey</a>
-                <a href="#stories" class="cta-button secondary">Read Stories</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="hero-image">
-        <div class="overlay"></div>
-        <div class="pattern-overlay"></div>
-        <img src="/static/Images/og-image.jpg" alt="Palestinian heritage landscape">
-    </div>
-
-    <div class="decorative-elements">
-        <div class="traditional-pattern left"></div>
-        <div class="traditional-pattern right"></div>
-    </div>
-</header>
-
-<main>
-    <section id="timeline" class="timeline-section">
-        <div class="container">
-            <h2>Historical Timeline</h2>
-            <div class="timeline">
-                <!-- Timeline line -->
-                <div class="timeline-line"></div>
-                
-                <!-- Timeline items -->
-                <div class="timeline-item" data-year="Pre-1917">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-img">
-                            <img src="/static/Images/timeline/1917/palestine-map-1917.jpg" alt="Historical map of Palestine">
-                        </div>
-                        <div class="timeline-year">Pre-1917</div>
-                        <h3>Ottoman Period</h3>
-                        <p>Palestine under Ottoman rule, characterized by diverse communities living together in historic cities and villages.</p>
-                        <div class="timeline-details">
-                            <a href="#" class="read-more">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="timeline-item" data-year="1917-1948">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-img">
-                            <img src="/static/Images/timeline/1917/british-mandate.jpg" alt="British Mandate period">
-                        </div>
-                        <div class="timeline-year">1917-1948</div>
-                        <h3>British Mandate Period</h3>
-                        <p>The era of British administration in Palestine, marked by significant political and social changes.</p>
-                        <div class="timeline-details">
-                            <a href="#" class="read-more">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="timeline-item" data-year="1948">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-img">
-                            <img src="/static/Images/timeline/1948/palestinian-villages.jpg" alt="Palestinian villages">
-                        </div>
-                        <div class="timeline-year">1948</div>
-                        <h3>Major Historical Events</h3>
-                        <p>A pivotal year that dramatically transformed the Palestinian landscape and society.</p>
-                        <div class="timeline-details">
-                            <a href="#" class="read-more" aria-label="Learn more about 1948 events">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item" data-year="1967">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-img">
-                            <img src="/static/Images/timeline/1967/jerusalem-1967.jpg" alt="Jerusalem in 1967">
-                        </div>
-                        <div class="timeline-year">1967</div>
-                        <h3>Six-Day War</h3>
-                        <p>A period of significant changes that reshaped the political and geographical landscape.</p>
-                        <div class="timeline-details">
-                            <a href="#" class="read-more" aria-label="Learn more about the Six-Day War">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                
-                </div> <!-- Close timeline -->
-                </div> <!-- Close container -->
-        </section>
-
-    <section id="gallery" class="gallery-container">
-        <div class="container">
-            <h2 class="gallery-title">Palestinian Historical Gallery</h2>
-        </div>
-        
-        <div class="gallery-filters">
-            <button class="filter-btn active" data-category="all">All</button>
-            <button class="filter-btn" data-category="architecture">Architecture</button>
-            <button class="filter-btn" data-category="artifacts">Artifacts</button>
-            <button class="filter-btn" data-category="daily-life">Daily Life</button>
-            <button class="filter-btn" data-category="traditions">Traditions</button>
-        </div>
-
-        <div class="gallery-grid">
-            <!-- Images will be dynamically loaded here -->
-        </div>
-
-        <div class="gallery-modal">
-            <span class="modal-close">&times;</span>
-            <img class="modal-content" id="modal-img">
-            <div class="modal-caption"></div>
-            <button class="modal-prev">&#10094;</button>
-            <button class="modal-next">&#10095;</button>
-        </div>
-    </section>
-
-    <section id="stories" class="stories-section">
-        <div class="container">
-            <h2>Stories of Palestine</h2>
-            <div class="stories-grid">
-                <article class="story-card">
-                    <img src="/static/Images/stories/locations/bethlehem-past.jpg" alt="">
-                    <div class="story-content">
-                        <h3>Life in Historic Bethlehem</h3>
-                        <p>Exploring the rich cultural heritage and daily life in historic Bethlehem.</p>
-                        <a href="#" class="read-more">Read More</a>
-                    </div>
-                </article>
-                <!-- Add more story cards -->
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="about-section">
-        <div class="container">
-            <h2>About This Project</h2>
-            <div class="about-content">
-                <p>This interactive platform is dedicated to preserving and sharing Palestinian history and cultural heritage. Through engaging narratives and visual storytelling, we aim to provide an educational journey through Palestine's rich historical tapestry.</p>
-            </div>
-        </div>
-    </section>
-</main>
-
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Navigation</h3>
-                    <ul>
-                        <li><a href="#timeline">Timeline</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#stories">Stories</a></li>
-                        <li><a href="#about">About</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Connect</h3>
-                    <p>Stay updated with our latest historical content and discoveries.</p>
-                    <div class="footer-social">
-                        <a href="#" aria-label="Follow us on Twitter">Twitter</a>
-                        <a href="#" aria-label="Follow us on Instagram">Instagram</a>
-                        <a href="#" aria-label="Follow us on Facebook">Facebook</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Palestinian History Project. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-
-<script src="/static/js/utils/animations.js"></script>
-<script src="/static/js/utils/helpers.js"></script>
-<script src="/static/js/main.js"></script>
-
-</body>
-</html>
+    <a href="timeline/10" class="slide_img" style="display:none;"></a>
+    <a href="timeline/11" class="slide_img" style="display:none;"></a>
+    <a href="timeline/12" class="slide_img" style="display:none;"></a>
+    <a href="timeline/13" class="slide_img" style="display:none;"></a>
+    <a href="timeline/14" class="slide_img" style="display:none;"></a>
+    <a href="timeline/15" class="slide_img" style="display:none;"></a>
+    <a href="timeline/16" class="slide_img" style="display:none;"></a>
+    <a href="timeline/17" class="slide_img" style="display:none;"></a>
+    <a href="timeline/18" class="slide_img" style="display:none;"></a>
+    <a href="timeline/19" class="slide_img" style="display:none;"></a>
+    <a href="timeline/20" class="slide_img" style="display:none;"></a>
+    <span class="arrow right_arrow" onclick="next_slide()"></span>
+</div>
+<div class="main">
+<h1>Palestine Through Time</h1>
+<p>4,000 Years Of History, Culture & Heritage</p>
+</div>
+{% endblock %}

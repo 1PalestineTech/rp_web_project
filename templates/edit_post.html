@@ -1,27 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Edit Article</title>
-</head>
-<body>
-	<div class="warpper" style="width: 700px; margin: auto">
-		<h1>Edit</h1>
+
+{% extends "layout.html" %}
+{% block content %}
+<div class="admin post">
+		<h2>Edit</h2>
 		<form method="post">
             {{ form.csrf_token }}
-			{{ form.title.label(class="form-label") }}<br>
-			{{ form.title(class="form-control") }}<br>
-			{{ form.tags.label(class="form-label") }}<br>
-			{{ form.tags(class="form-control") }}<br>
+			<div>
+			{{ form.title.label(class="form-label") }}
+			{{ form.title(class="form-control") }}
+			</div>
+			<div>
+			{{ form.tags.label(class="form-label") }}
+			{{ form.tags(class="form-control") }}
+			</div><div>
 			{{ form.desciption.label(class="form-label") }}<br>
-			{{ form.desciption(class="form-control") }}<br><br>
-			{{ form.body.label(class="form-label") }}<br>
+			{{ form.desciption(class="form-control") }}
+		</div><div>
+			{{ form.body.label(class="form-label") }}
 			{{ form.body(class="form-control", rows="10") }}
-			<br>
+		</div>
 			{{ form.submit }}
 		</form>
-	</div>
+	
     {{ ckeditor.load() }}
 	{{ ckeditor.config(name='body') }}
-</body>
-</html>
+</div>
+{% endblock %}

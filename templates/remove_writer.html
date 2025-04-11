@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="admin">
+                <form class="admin_form" action="remove_writer" method="post">
+                <h2>Remove Admin</h2>
+                {{ form.csrf_token }}
+                {% for admin in admins %}
+                    <div>
+                    <input class="admin_check" type=checkbox name=writters value='{{ admin[0]}}'> <span class="writer_name">{{ admin[1] }} </span>
+                    </div>
+                
+                {% endfor %}
+                      <button type="submit" class="delete_btn">DELETE</button>
+
+                  </div>
+
+  </section>
+  {% endblock %}

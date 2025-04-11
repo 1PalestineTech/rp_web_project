@@ -1,49 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover the rich tapestry of Palestinian history through an interactive educational journey. Explore cultural heritage, historical timelines, and compelling stories.">
-    
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="Palestinian History | Interactive Educational Journey">
-    <meta property="og:description" content="Explore Palestinian heritage through interactive timelines, galleries, and stories.">
-    <meta property="og:image" content="/static/images/og-image.jpg">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/static/images/favicon.png">
-    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-    <title>Palestinian History | Interactive Educational Journey</title>
-  </head>
-  <body>
+{% extends "layout.html" %}
+{% block content %}
 <section class="admin">
-    <div class="container">
-        <div class="col d-flex justify-content-center ">
-        
-            <div class="card" style="width: 40rem;">
-                <div class="card-body">
-                <form action="login" method="post">
-                <h3>Welcome :</h3>
-                
-                <div class="form-group">
+                <form class="admin_form" action="login" method="post">
+                <h2>Login :</h2>
+          
                     <label for="username">Username</label>
                     {{ form.csrf_token }}
                     {{ form.username(class="form-control") }}
-                  </div>
-                  <div class="form-group">
+
                     <label for="password">Password</label>
                     {{ form.password(class="form-control") }}
-                  </div>
-                  <div class="form-group">
-
-                      <button type="submit" class="btn btn-primary green_btn py-2">Login</button>
-
-                  </div>
+                      <button type="submit" class="submit_btn">Login</button>
                 </form>
-            </div>
-            </div>
-            </div>
+
   </section>
-  <script src="/static/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+  {% endblock %}

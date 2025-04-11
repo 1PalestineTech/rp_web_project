@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, session, url_for, send_from_directory
+from flask import Flask, render_template, request, redirect, session, url_for, send_from_directory,jsonify
 from flask_wtf import FlaskForm,CSRFProtect
 from wtforms import StringField, SubmitField, SelectField, TextAreaField
 from wtforms.validators import DataRequired
@@ -6,7 +6,7 @@ from flask_ckeditor import CKEditor, CKEditorField, upload_fail, upload_success
 from flask_session import Session
 import re, sqlite3, shortuuid, os.path, os, shutil
 from werkzeug.security import check_password_hash, generate_password_hash
-from src.utils import admin_writter_required, admin, admin_writter_editor_required
+from src.utils import login_required, admin
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -39,7 +39,8 @@ class Login(FlaskForm):
     password = StringField('Password', validators=[DataRequired()])
     submit = SubmitField()
 
-
+class Delete(FlaskForm):
+    pass
 
 
 #                                        LOGIN
@@ -53,7 +54,7 @@ def login():
         cursor = db.execute("SELECT * FROM Users WHERE username = (?) ",(username,))
         rows = cursor.fetchall()
         if len(rows) != 1 or not check_password_hash(rows[0][2],password):
-            return render_template("error.html", top=403, bottom="invalid username and/or password",url=request.path),403
+            return render_template("error.html", top=403, bottom="Invalid Username And/Or Password",url=request.path),403
         session["user_id"] = rows[0][0]
         return redirect("/")
     else :
@@ -74,22 +75,22 @@ def logout():
 
 #                                        CHANGE PASSWORD
 @app.route('/change_password', methods = ['GET','POST'])
-@admin_writter_editor_required
+@login_required
 def change_password():
     db = sqlite3.connect('web_data.db')
     if request.method == "POST":
         if not request.form.get("old_password"):
-            return render_template("error.html", top=403, bottom="must provide old password",url=request.path),403 
+            return render_template("error.html", top=403, bottom="Must Provide Old Password",url=request.path),403 
 
         elif not request.form.get("new_password"):
-            return render_template("error.html", top=403, bottom="must provide the new password",url=request.path),403 
+            return render_template("error.html", top=403, bottom="Must Provide The New Password",url=request.path),403 
         old_password = request.form.get('old_password').strip()
         new_password = request.form.get('new_password').strip()
         cursor = db.execute("SELECT * FROM Users WHERE id = (?) ",(session.get("user_id"),))
         rows = cursor.fetchall()
 
         if len(rows) != 1 or not check_password_hash(rows[0][2],old_password):
-            return render_template("error.html", top=403, bottom="wrong password",url=request.path),403
+            return render_template("error.html", top=403, bottom="Wrong Password",url=request.path),403
         hs=generate_password_hash(new_password) 
         db.execute("UPDATE Users SET password = (?) WHERE id = (?)",(hs,session.get("user_id")))
         db.commit()
@@ -109,15 +110,15 @@ def add_writer():
         username = request.form.get('username').strip()
         password = request.form.get('password').strip()
         if not request.form.get("username"):
-            return render_template("error.html", top=403, bottom="must provide username",url=request.path),403 
+            return render_template("error.html", top=403, bottom="Must Provide Username",url=request.path),403 
 
         elif not request.form.get("password"):
-            return render_template("error.html", top=403, bottom="must provide password",url=request.path),403 
+            return render_template("error.html", top=403, bottom="Must Provide Password",url=request.path),403 
         db = sqlite3.connect('web_data.db')
         cursor = db.execute("SELECT * FROM Users WHERE username = (?) ",(username,))
         rows = cursor.fetchall()
         if len(rows)>0:
-            return render_template("error.html", top=403, bottom="username aleardy exist",url=request.path),403 
+            return render_template("error.html", top=403, bottom="Username Aleardy Exist",url=request.path),403 
         id = shortuuid.ShortUUID().random(length=20)
         hs=generate_password_hash(password)
         db.execute("INSERT INTO Users (id,username,password) VALUES ((?),(?),(?)) ",(id, username, hs))
@@ -125,7 +126,7 @@ def add_writer():
         db.commit()
         return redirect('/remove_writer')
     else:
-        return render_template("add_writer.html")
+        return render_template("add_writer.html",form=Delete())
 
 
 
@@ -138,80 +139,25 @@ def remove_admin():
     db = sqlite3.connect('web_data.db')
     if request.method == "POST":
         
-        ids = request.form.getlist('admins')
+        ids = request.form.getlist('writters')
+        print(ids)
         for id in ids:
-            cursor = db.execute("SELECT * FROM Admins WHERE id = (?) ",(id,))
+            cursor = db.execute("SELECT * FROM Writters WHERE id = (?) ",(id,))
             rows = cursor.fetchall()
-            if len(rows)!=1:
-                db.execute("DELETE FROM Writers WHERE id = (?) ",(id,))
+            if len(rows)>0:
+                db.execute("DELETE FROM Writters WHERE id = (?) ",(id,))
                 db.execute("DELETE FROM Users WHERE id = (?) ",(id,))
-                
                 db.commit()
         return redirect('/remove_writer')
     
-    cursor = db.execute("SELECT * from Writers where id not in (select id from Admins) ")
+    cursor = db.execute("SELECT * FROM Users WHERE id NOT IN (SELECT id FROM Admins)")
     rows = cursor.fetchall()
-    return render_template("remove_writer.html",admins=rows)
-
-#                                        ADD EDITOR
-@app.route('/add_editor', methods = ['GET','POST'])
-@admin
-def add_editor():
-    if request.method == "POST":
-        username = request.form.get('username').strip()
-        password = request.form.get('password').strip()
-        if not request.form.get("username"):
-            return render_template("error.html", top=403, bottom="must provide username",url=request.path),403 
-
-        elif not request.form.get("password"):
-            return render_template("error.html", top=403, bottom="must provide password",url=request.path),403 
-        db = sqlite3.connect('web_data.db')
-        cursor = db.execute("SELECT * FROM Users WHERE username = (?) ",(username,))
-        rows = cursor.fetchall()
-        if len(rows)>0:
-            return render_template("error.html", top=403, bottom="username aleardy exist",url=request.path),403 
-        id = shortuuid.ShortUUID().random(length=20)
-        hs=generate_password_hash(password)
-        db.execute("INSERT INTO Users (id,username,password) VALUES ((?),(?),(?)) ",(id, username, hs))
-        db.execute("INSERT INTO Editors (id) VALUES (?) ",(id,))
-        db.commit()
-        return redirect('/remove_editor')
-    else:
-        return render_template("add_writer.html")
-
-
-
-
-#                                        REMOVE EDITOR
-@app.route('/remove_editor', methods = ['GET','POST'])
-@admin
-def remove_editor():
-    db = sqlite3.connect('web_data.db')
-    if request.method == "POST":
-        
-        ids = request.form.getlist('admins')
-        for id in ids:
-            cursor = db.execute("SELECT * FROM Admins WHERE id = (?) ",(id,))
-            rows = cursor.fetchall()
-            if len(rows)!=1:
-                db.execute("DELETE FROM Editors WHERE id = (?) ",(id,))
-                db.execute("DELETE FROM Users WHERE id = (?) ",(id,))
-                
-                db.commit()
-        return redirect('/remove_editor')
-    
-    cursor = db.execute("SELECT * from Editors where id not in (select id from Admins) ")
-    rows = cursor.fetchall()
-    return render_template("remove_writer.html",admins=rows)
-
-
-
-
+    return render_template("remove_writer.html",admins=rows,form=Delete())
 
 
 #                                        ADD Article
 @app.route('/post', methods=['GET', 'POST'])
-@admin_writter_required
+@login_required
 def post():
     form = PostForm()
     if form.validate_on_submit():
@@ -257,7 +203,7 @@ def uploaded_files(filename):
 
 #                                        EDIT ARTICLE
 @app.route('/edit/<id>', methods = ['GET','POST'])
-@admin_writter_editor_required
+@login_required
 def edit(id):
     form = PostForm()
     parent_dir = "./static/articles"
@@ -268,9 +214,9 @@ def edit(id):
        tag = form.tags.data
        with open( path  ,'w') as fl:
             fl.write(form.body.data)
-       db.execute("INSERT INTO Actions (article_id,user_id,type) VALUES ((?),(?),(?)) ",(id, session.get("user_id") , "edit"))
-       db.execute("DELETE FROM Categorize WEHRE article_id = (?) ",(id, ))
+       db.execute("DELETE FROM Categorize WHERE article_id = (?) ",(id, ))
        db.execute("INSERT INTO Categorize (article_id,tag_id) VALUES ((?),(?)) ",(id, tag))
+       db.execute("UPDATE Articles SET desciption = (?), title = (?) WHERE id =(?)",(form.desciption.data,form.title.data,id))
        db.commit()
        return redirect('/article/'+id)
     elif id != "empty":
@@ -284,22 +230,21 @@ def edit(id):
             
             form.title.data = rows[0][1]
             form.desciption.data = rows[0][2]
-            form.tags.data = "aaaa"
             form.body.data = data
             return render_template("edit_post.html",form=form)
-        return render_template("error.html", top=403, bottom="page don't exist",url=request.path),403 
+        return render_template("error.html", top=403, bottom="Page Don't Exist",url=request.path),403 
     else:
-        return render_template("error.html", top=403, bottom="page don't exist",url=request.path),403 
+        return render_template("error.html", top=403, bottom="Page Don't Exist",url=request.path),403 
     
     
 
 
-#                                        REMOVE Article
-@app.route('/remove/<id>', methods = ['GET','POST'])
-@admin_writter_required
+#                                        DELETE Article
+@app.route('/delete/<id>', methods = ['GET','POST'])
+@login_required
 def remove(id):
     db = sqlite3.connect('web_data.db')
-    if request.method == "POST":
+    if request.method == "GET":
         parent_dir = "./static/articles"
         path = os.path.join(parent_dir, id)     
         shutil.rmtree(path)
@@ -307,9 +252,8 @@ def remove(id):
         db.execute("DELETE FROM Categorize WHERE article_id = (?) ",(id,))
         db.execute("INSERT INTO Actions (article_id,user_id,type) VALUES ((?),(?),(?)) ",(id, session.get("user_id") , "delete"))
         db.commit()
-        path = os.path.join(path, "index.txt") 
-        return redirect('/articles')
-    return 
+        return "200"
+    return "Done"
 
 
 #                                        HOME PAGE (Fixed)
@@ -327,7 +271,9 @@ def about():
 @app.route('/timeline')
 def timeline():
     return render_template("timeline.html")
-
+@app.route('/timeline/<id>')
+def timeline_item(id):
+    return render_template("timeline_item.html",id=id)
 
 
 
@@ -337,13 +283,35 @@ def timeline():
 
 @app.route('/articles')
 def articles():
+    form = Delete()
     db = sqlite3.connect('web_data.db')
-    print(request.path[1:])
+    
     cursor = db.execute("SELECT * FROM Articles ORDER BY date DESC")
     rows = cursor.fetchall()
-    return render_template("articles.html",rows=rows)
+    return render_template("articles.html",rows=rows,user=session.get("user_id"),form=form)
 
+#                                      Filter
+@app.route('/filter/<name>/<id>',methods = ['GET'])
+def filter(name="",id=""):
+    db = sqlite3.connect('web_data.db')
+    #id = request.form.get('tag')
+    #name = request.form.get('name')
 
+    if id.isalnum() and not name.isalnum():
+        print(1)
+        cursor = db.execute("SELECT * FROM Articles WHERE id IN (SELECT article_id FROM Categorize WHERE tag_id =(?)) ORDER BY date DESC",id)
+    elif (not name.isalnum()) and  not id.isalnum():
+        print(2)
+        cursor = db.execute("SELECT * FROM Articles ORDER BY date DESC")
+    elif name.isalnum() and id.isalnum():
+        print(3)
+        cursor = db.execute("SELECT * FROM Articles WHERE id IN (SELECT article_id FROM Categorize WHERE tag_id = (?)) AND title LIKE (?) ORDER BY date DESC",(id,"%"+name+"%"))
+    else:
+        print(4)
+        cursor = db.execute("SELECT * FROM Articles WHERE title LIKE (?) ORDER BY date DESC",("%"+name+"%",))
+    rows = cursor.fetchall()
+    return  jsonify({"data":rows})
+    
 
 
 
@@ -366,7 +334,7 @@ def page(id="empty"):
         title=rows[0][0]
         return render_template("page.html",title=title,data=data)
     else:
-        return render_template("error.html", top=403, bottom="page don't exist",url=request.path),403 
+        return render_template("error.html", top=403, bottom="Page Don't Exist",url=request.path),403 
     
 
 
