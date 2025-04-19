@@ -26,14 +26,21 @@ csrf = CSRFProtect(app)
 
 class PostForm(FlaskForm):
     title = StringField('Title')
-    db = sqlite3.connect('web_data.db')
-    cursor = db.execute("SELECT * FROM Tags")
-    rows = cursor.fetchall()
-    tg = list (map(lambda e: (e[0], e[1]),rows))
-    tags = SelectField('Tags', choices = tg)
+    tags = SelectField('Tags', choices=[])  # Set default empty
     desciption = TextAreaField('Desciption')
     body = CKEditorField('Body', validators=[DataRequired()])
     submit = SubmitField()
+
+    def __init__(self, *args, **kwargs):
+        super(PostForm, self).__init__(*args, **kwargs)
+        try:
+            db = sqlite3.connect(os.path.join(basedir, 'web_data.db'))
+            cursor = db.execute("SELECT * FROM Tags")
+            rows = cursor.fetchall()
+            self.tags.choices = [(row[0], row[1]) for row in rows]
+        except Exception as e:
+            self.tags.choices = []
+            # optionally log e
 class Login(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     password = StringField('Password', validators=[DataRequired()])
