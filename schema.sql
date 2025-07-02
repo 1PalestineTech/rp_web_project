@@ -23,13 +23,13 @@ CREATE TABLE Articles (
     PRIMARY KEY (id)
 );
 CREATE TABLE Tags (
-    id TEXT,
+    id INTEGER,
     name TEXT,
     PRIMARY KEY(id)
 );
 CREATE TABLE Categorize (
     article_id TEXT,
-    tag_id TEXT,
+    tag_id INTEGER,
     FOREIGN KEY (article_id) REFERENCES Articles(id),
     FOREIGN KEY (tag_id) REFERENCES Tags(id)
 );
@@ -44,12 +44,25 @@ CREATE TABLE Actions (
 );
 INSERT INTO Users (id, username,password) VALUES ('Ri3JXVWwwgcdqq3wzrzD','Nomad','scrypt:32768:8:1$p21ZWE1dXfvZSlB1$9eb63acbecd3df3c2593e91ed57d09e29e336cdf21a6f0905cabc1c23ba55394f18372f60ee0c932053b8b2ea58d740938bceea43cad2128b2e8767f1cf85494');
 INSERT INTO Admins (id) VALUES ('Ri3JXVWwwgcdqq3wzrzD');
-INSERT INTO Tags (name,id) VALUES ('History','ZkSDkwPr1H2EIzb3Zjwh');
-INSERT INTO Tags (name,id) VALUES ('Culture','F4zV58GF2SVC3xaTW8C6');
-INSERT INTO Tags (name,id) VALUES ('Massacres','dAQOKHq5KKtEv9jdjJgr');
-INSERT INTO Tags (name,id) VALUES ('Current Event','qxedzb2sh6Drd5dC6t3L');
-INSERT INTO Tags (name,id) VALUES ('Facts','dTChIrJ047TKMlZaKb3I');
-
+INSERT INTO Tags (name) VALUES ('History');
+INSERT INTO Tags (name) VALUES ('Palestine 101');
+INSERT INTO Tags (name) VALUES ('Religion');
+INSERT INTO Tags (name) VALUES ('Massacres');
+INSERT INTO Tags (name) VALUES ('Zioni Myths');
+INSERT INTO Tags (name) VALUES ('Nekba');
+INSERT INTO Tags (name) VALUES ('Int Law');
+INSERT INTO Tags (name) VALUES ('War Crimes');
+INSERT INTO Tags (name) VALUES ('Identity');
+INSERT INTO Tags (name) VALUES ('Protests');
+INSERT INTO Tags (name) VALUES ('BDS');
+INSERT INTO Tags (name) VALUES ('Culture');
+INSERT INTO Tags (name) VALUES ('Nationalism');
+INSERT INTO Tags (name) VALUES ('Human Rights');
+INSERT INTO Tags (name) VALUES ('Zioni Quotes');
+INSERT INTO Tags (name) VALUES ('Solutions');
+INSERT INTO Tags (name) VALUES ('Naksa');
+INSERT INTO Tags (name) VALUES ('Palestine Quotes');
+INSERT INTO Tags (name) VALUES ('Hasbara Tactic');
 
 
 

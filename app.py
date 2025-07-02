@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, session, url_for, send_from_directory,jsonify
 from flask_wtf import FlaskForm,CSRFProtect
-from wtforms import StringField, SubmitField, SelectField, TextAreaField
+from wtforms import StringField, SubmitField, SelectField, TextAreaField,HiddenField
 from wtforms.validators import DataRequired
 from flask_ckeditor import CKEditor, CKEditorField, upload_fail, upload_success
 from flask_session import Session
@@ -27,6 +27,7 @@ csrf = CSRFProtect(app)
 class PostForm(FlaskForm):
     title = StringField('Title')
     tags = SelectField('Tags', choices=[])  # Set default empty
+    tags_values = HiddenField("tags_values")
     desciption = TextAreaField('Desciption')
     body = CKEditorField('Body', validators=[DataRequired()])
     submit = SubmitField()
@@ -170,7 +171,7 @@ def post():
     if form.validate_on_submit():
         title = form.title.data
         body = form.body.data
-        tag= form.tags.data
+        tags_values = form.tags_values.data.split(",")
         id = str(shortuuid.ShortUUID(alphabet="013456789").random(length=20))
         parent_dir = "./static/articles"
         path = os.path.join(parent_dir, id) 
@@ -183,7 +184,8 @@ def post():
         desciption = form.desciption.data
 
         db.execute("INSERT INTO Articles (id,title,desciption) VALUES ((?),(?),(?)) ",(id, title , desciption))
-        db.execute("INSERT INTO Categorize (article_id,tag_id) VALUES ((?),(?)) ",(id, tag))
+        for tag in tags_values:
+            db.execute("INSERT INTO Categorize (article_id,tag_id) VALUES ((?),(?)) ",(id, tag))
         db.execute("INSERT INTO Actions (article_id,user_id,type) VALUES ((?),(?),(?)) ",(id, session.get("user_id") , "write"))
         db.commit()
         return redirect('/article/'+id)
@@ -218,14 +220,15 @@ def edit(id):
     path = os.path.join(path, "index.txt")
     db = sqlite3.connect('web_data.db')
     if form.validate_on_submit():
-       tag = form.tags.data
-       with open( path  ,'w') as fl:
+        with open( path  ,'w') as fl:
             fl.write(form.body.data)
-       db.execute("DELETE FROM Categorize WHERE article_id = (?) ",(id, ))
-       db.execute("INSERT INTO Categorize (article_id,tag_id) VALUES ((?),(?)) ",(id, tag))
-       db.execute("UPDATE Articles SET desciption = (?), title = (?) WHERE id =(?)",(form.desciption.data,form.title.data,id))
-       db.commit()
-       return redirect('/article/'+id)
+        db.execute("DELETE FROM Categorize WHERE article_id = (?) ",(id, ))
+        tags_values = form.tags_values.data.split(",")
+        for tag in tags_values:
+            db.execute("INSERT INTO Categorize (article_id,tag_id) VALUES ((?),(?)) ",(id, tag))
+        db.execute("UPDATE Articles SET desciption = (?), title = (?) WHERE id =(?)",(form.desciption.data,form.title.data,id))
+        db.commit()
+        return redirect('/article/'+id)
     elif id != "empty":
         cursor = db.execute("SELECT * FROM Articles WHERE id =?",(id,))
         rows = cursor.fetchall()
@@ -295,29 +298,27 @@ def articles():
     
     cursor = db.execute("SELECT * FROM Articles ORDER BY date DESC")
     rows = cursor.fetchall()
-    return render_template("articles.html",rows=rows,user=session.get("user_id"),form=form)
+    cursor = db.execute("SELECT * FROM Tags ")
+    tags = cursor.fetchall()
+    return render_template("articles.html",rows=rows,user=session.get("user_id"),form=form,tags=tags)
 
 #                                      Filter
-@app.route('/filter/<name>/<id>',methods = ['GET'])
-def filter(name="",id=""):
+@app.route('/filter',methods = ["POST","GET"])
+def filter():
     db = sqlite3.connect('web_data.db')
-    #id = request.form.get('tag')
-    #name = request.form.get('name')
-
-    if id.isalnum() and not name.isalnum():
-        print(1)
-        cursor = db.execute("SELECT * FROM Articles WHERE id IN (SELECT article_id FROM Categorize WHERE tag_id =(?)) ORDER BY date DESC",id)
-    elif (not name.isalnum()) and  not id.isalnum():
-        print(2)
+    form = request.get_json()
+    ids = form['tags'].strip()
+    name = form['name'].strip()
+    if len(ids) != 0 and not name.isalnum():
+        cursor = db.execute(f"SELECT * FROM Articles WHERE id IN (SELECT article_id FROM Categorize WHERE tag_id IN ({ids})) ORDER BY date DESC")
+    elif (not name.isalnum()) and  len(ids) == 0:
         cursor = db.execute("SELECT * FROM Articles ORDER BY date DESC")
-    elif name.isalnum() and id.isalnum():
-        print(3)
-        cursor = db.execute("SELECT * FROM Articles WHERE id IN (SELECT article_id FROM Categorize WHERE tag_id = (?)) AND title LIKE (?) ORDER BY date DESC",(id,"%"+name+"%"))
+    elif name.isalnum() and len(ids) != 0:
+        cursor = db.execute(f"SELECT * FROM Articles WHERE id IN (SELECT article_id FROM Categorize WHERE tag_id = ({ids})) AND title LIKE (?) ORDER BY date DESC",("%"+name+"%",))
     else:
-        print(4)
         cursor = db.execute("SELECT * FROM Articles WHERE title LIKE (?) ORDER BY date DESC",("%"+name+"%",))
     rows = cursor.fetchall()
-    return  jsonify({"data":rows})
+    return  jsonify({"data":rows,"admin":session.get("user_id")})
     
 
 

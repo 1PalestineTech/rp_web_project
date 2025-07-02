@@ -5,6 +5,22 @@
 
                 <h2>Palestine Articles</h2>
                 {{ form.csrf_token }}
+                <div>
+                <input type="text" class="search_article">
+                <button onclick="filter()">Search</button>
+                </div>
+                <div>
+                <select class="form-control" id="tags" name="tags">
+                {% for tag in tags %}
+                <option value="{{tag[0]}}">{{tag[1]}}</option>
+                
+                {% endfor %}
+                </select>
+                </div>
+                <div>
+                    <input type="hidden" class="tags_values">
+                </div>
+                <div class="articles_group">
                 {% for row in rows %}
                 <div class="article" id="article_{{row[0]}}">
                     <div>
@@ -17,7 +33,7 @@
                     <div class="article_items">
                         <h4><a href="article/{{row[0]}}">{{row[1]}}</a></h4>
                         <p>{{row[2]}}</p>
-                        <p>{{row[4]}}</p>
+                        <p>{{row[3]}}</p>
                         {% if  user %}
                         <div>
                             <a href="edit/{{row[0]}}"><button class="submit_btn">Edit</button></a> <button class="delete_btn" onclick="delete_article('{{row[0]}}')">Delete</button>
@@ -26,7 +42,9 @@
                     </div>
                     </div>
                 {% endfor %}
-
+                </div>
    
 </section>
+<script src="/static/js/article.js"></script>
+<script src="/static/js/filter.js"></script>
 {% endblock %}

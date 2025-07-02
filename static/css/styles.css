@@ -476,7 +476,14 @@ font-weight: 700;
 
 /*------------------------------------        Article        -------------------------------------*/
 .articles{
-  margin-top: 10rem;
+   margin-top: 10rem;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+}
+.articles_group{
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -485,7 +492,7 @@ font-weight: 700;
   margin-bottom:200px ;
 
 }
-.articles h2{
+.articles_group h2{
   font-size: 34px;
   font-weight: 700;
 
@@ -606,3 +613,24 @@ font-weight: 700;
     }
 }
 /*------------------------------------------------------------------------------------------------*/
+   .selected-tags {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+   .tag {
+      background: #007bff;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+
+    .tag .remove {
+      margin-left: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }

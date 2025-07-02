@@ -12,7 +12,11 @@
 			<div>
 			{{ form.tags.label(class="form-label") }}
 			{{ form.tags(class="form-control") }}
-			</div><div>
+			</div>
+			<div>
+			{{ form.tags_values(class="tags_values") }}
+		</div>
+			<div>
 			{{ form.desciption.label(class="form-label") }}<br>
 			{{ form.desciption(class="form-control") }}
 		</div><div>
@@ -25,4 +29,5 @@
     {{ ckeditor.load() }}
 	{{ ckeditor.config(name='body') }}
 </div>
+<script src="/static/js/article.js"></script>
 {% endblock %}
