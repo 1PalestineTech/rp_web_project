@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, session, url_for, send_from_directory,jsonify
+from flask import Flask, render_template, request, redirect, session, url_for, send_from_directory,jsonify,send_file
 from flask_wtf import FlaskForm,CSRFProtect
 from wtforms import StringField, SubmitField, SelectField, TextAreaField,HiddenField
 from wtforms.validators import DataRequired
@@ -337,14 +337,17 @@ def page(id="empty"):
             for line in f.readlines():
                 data +=  line.strip()
         db = sqlite3.connect('web_data.db')
-        cursor = db.execute("SELECT title FROM Articles WHERE id =?",(id,))
+        cursor = db.execute("SELECT title,desciption FROM Articles WHERE id =?",(id,))
         rows = cursor.fetchall()
         title=rows[0][0]
-        return render_template("page.html",title=title,data=data)
+        desciption=rows[0][1]
+        return render_template("page.html",title=title,data=data,desciption=desciption)
     else:
         return render_template("error.html", top=403, bottom="Page Don't Exist",url=request.path),403 
     
-
+@app.route('/cover')
+def serve_image():
+    return send_file('static/cover.png', mimetype='image/pngs')
 
 
 if __name__ == "__main__":
