@@ -22,11 +22,12 @@ a, a:visited, a:active {
 }
 
 .nav_logo {
-  justify-content: center;
-  align-items: center;
+  justify-content: center !important;
   margin-bottom: 20px;
 }
-
+.nav_logo img{
+  height:150px;
+}
 .nav_links {
   justify-content: space-between;
   width: 100%;
