@@ -22,7 +22,8 @@ a, a:visited, a:active {
 }
 .search_icon{
   position: relative;
-  left: 30px;
+  right: 45px;
+  top:7px;
 }
 .nav_logo {
   justify-content: center !important;
