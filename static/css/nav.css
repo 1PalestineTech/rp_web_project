@@ -1,0 +1,96 @@
+/* --- General Styles (No Change) --- */
+* {
+  font-family: 'Rubik', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a, a:visited, a:active {
+  text-decoration: none;
+  color: black;
+}
+
+/* --- Navigation Bar (No Change) --- */
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100px;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.nav_logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.nav_links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+  width: 100%;
+}
+
+.nav_links div a {
+  padding: 10px 15px;
+}
+
+.links a {
+  display: inline-block;
+}
+
+/* RENAMED: from .nav_btn to .nav_toggle */
+.nav_toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: none; /* Make background transparent */
+  border: none; /* Remove default border */
+  color: black; /* Ensure icon has color */
+}
+.nav_links input{
+  
+  font-size:18px;
+  border-radius:5px;
+  border:grey 1px solid;
+  padding:3px;
+}
+/* --- Responsive Styles for Mobile --- */
+@media only screen and (max-width: 1050px) {
+  /* MODIFIED: Keep this as a row to align search and toggle button */
+  .nav_links {
+    flex-direction: row;
+    justify-content: space-between;
+    
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align items to the right */
+  }
+
+  /* Hide the links by default */
+  .links a {
+    display: none;
+    width: 100%;
+    padding: 12px 0;
+    text-align: right; /* Align link text to the right */
+  }
+  
+  /* Show the toggle button */
+  .nav_toggle {
+    display: block;
+  }
+
+  /* When the .links container has the .active class, show the links */
+  .links.active a {
+    display: block;
+  }
+}

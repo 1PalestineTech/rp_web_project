@@ -12,37 +12,143 @@
     <!-- Favicon -->
     <link rel="icon" type="image/ico" href="/static/icons/favicon.ico">
     <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/nav.css">
+    <link rel="stylesheet" href="/static/css/footer.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/
+all.min.css">
     <title>1Palestine</title>
 </head>
 <body dir="ltr">
 
-    
-    <nav class="nav_bar">
-      <div class="nav_menu"><span class="logo"><img class="img_logo" src="../static/Images/colored_logo.png"></span><span class="dp_btn"></span></div>
-      <div class="nav_items"><span class="nav_link"><a href="/index">Home</a></span><a href="https://x.com/handalapali/"><img class="nav_img" src="../static/Images/icons/twitter.png"></a></div>
-      <div class="nav_items"><span class="nav_link"><a href="/timeline">Timeline</a></span><a href="#"><img class="nav_img" src="../static/Images/icons/instagram.png"></a></div>
-      <div class="nav_items"><span class="nav_link"><a href="/articles">Articles</a></span><a href="#"><img class="nav_img" src="../static/Images/icons/tiktok.png"></a></div>
-      <div class="nav_items"><span class="nav_link"><a href="#">Stories</a></span><a href="https://www.reddit.com/r/Palestine/"><img class="nav_img" src="../static/Images/icons/reddit.png"></a></div>
-      <div class="nav_items"><span class="nav_link"><a href="/about">About</a></span><a href="https://www.quora.com/profile/Handala-2"><img class="nav_img" src="../static/Images/icons/quora.png"></a></div>
-    </nav>
+      <nav class="nav flex_column">
+    <div class="nav_logo flex_row">
+      <a href="/"> <img class="footer_logo" src="/static/Images/colored_logo.png" alt="1Palestine Logo"></a>
+    </div>
+    <div class="nav_links flex_row">
+      <div>
+        <input type="search" placeholder="Search in site">
+      </div>
+      
+      <div class="links">
+        <button class="nav_toggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <a href="#">History</a>
+        <a href="#">Projects</a>
+        <a href="#">Resources</a>
+        <a href="#">About</a>
+      </div>
+    </div>
+  </nav>
     {% block content %}{% endblock %}
-<footer class="footer">
-  <span class="footer_logo">
-    <img class="footer_img" src="/static/Images/white_logo.png">
-  </span>
-  <span class="social">
-    <a href="https://www.quora.com/profile/Handala-2"><img src="/static/Images/icons/quora.png"></a>
-    <a href="#"><img src="/static/Images/icons/facebook.png"></a>
-    <a href="https://www.reddit.com/r/Palestine/"><img src="/static/Images/icons/reddit.png"></a>
-    <a href="#"><img src="/static/Images/icons/tiktok.png"></a>
-    <a href="#"><img src="/static/Images/icons/instagram.png"></a>
-    <a href="https://x.com/handalapali/"><img src="/static/Images/icons/twitter.png"></a>
-  </span>
+<footer class="footer .flex_column">
+  <div class="flex_row m-20">
+    <div class="mission flex_column">
+      <div>
+        <img class="footer_logo" src="/static/Images/colored_logo.png" alt="1Palestine Logo">
+      </div>
+      <div>
+        <p>
+          Our mission is to educate and foster a better future for Palestine by highlighting its rich history and vibrant culture. 
+          We aim to reveal hidden truths by sharing knowledge about forgotten Palestinian villages and the tragic massacres that affected them. 
+          Through engaging content and impactful storytelling, we strive to preserve Palestinian heritage and dispel myths, 
+          ensuring a well-informed and connected global community.
+        </p>
+        <br>
+        <p> 
+          We aim to unite Palestinians and their allies through a deeply accurate understanding of Palestinian identity and history, 
+          preserving our heritage and dispelling myths across diverse platforms.
+        </p>
+      </div>      
+      <div class="flex_row">
+        <div class="flex_column">
+          <h5>History</h5>
+          <a>Articles</a>
+          <a>Timeline</a>
+          <a>Deep Dives</a>
+          <a>FAQ</a>
+        </div>
+        <div class="flex_column">
+          <h5>Projects</h5>
+          <a>Palestinian Projects</a>
+          <a>Artistic Showcase</a>
+          <a>Debunking Myts</a>
+          <a>Volunteer</a>
+        </div>
+        <div class="flex_column">
+          <h5>Resources</h5>
+          <a>Books</a>
+          <a>Films</a>
+          <a>Podcasts</a>
+          <a>Glossary</a>
+        </div>
+        <div class="flex_column">
+          <h5>About</h5>
+          <a>Mission</a>
+          <a>Vision</a>
+          <a>Who We Are</a>
+        </div>
+      </div>
+    </div>
+    <div class="flex_column impact">
+      <div>
+        <h3>Impact Oreview</h3>
+        <p>Since Launching in 2025, we've been<br> growing our community!</p>
+      </div>
+      <div class="flex_row fx-wrap">
+        <div class="w-300">
+          <h4>22</h4>
+          <span>Projects Launched</span>
+        </div>
+        <div class="w-300">
+          <h4>8,000+</h4>
+          <span>Community Members</span>
+        </div>
+        <div class="w-300">
+          <h4>75</h4>
+          <span>Events Held</span>
+        </div>
+      </div>
+      <div>
+        <h3>Join The Movement</h3>
+        <span>Join Our Discord Community or sign up to Volunteer
+          with Volunteer4Palestine!
+        </span>
+        <div>
+          <span><img src="/static/Images/icons/rd.svg" ></span>
+          <span><img src="/static/Images/icons/tw.svg" ></span>
+          <span><img src="/static/Images/icons/fb.svg" ></span>
+          <span><img src="/static/Images/icons/in.svg" ></span>
+          <span><img src="/static/Images/icons/tk.svg" ></span>
+          <span><img src="/static/Images/icons/qr.svg" ></span>
+        </div>
+      </div>
 
+    </div>
+  </div>
+    <div class="line">
+
+    </div>
+  <div class="flex_row">
+    <div>
+      <span>Privacy</span>
+      <span>Terms of Use</span>
+    </div>
+    <div>
+      <div>© 2025 1Palestine. All rights reserved.</div>
+    </div>
+  </div>
   
 </footer>
+<script >
+  const navToggle = document.querySelector(".nav_toggle");
+const linksContainer = document.querySelector(".links");
 
-
+// When the toggle button is clicked...
+navToggle.onclick = () => {
+  // ...add or remove the 'active' class from the links container.
+  linksContainer.classList.toggle('active');
+};</script>
 <script src="/static/js/script.js">
 </script>
 </body>
