@@ -8,13 +8,12 @@
 
 a, a:visited, a:active {
   text-decoration: none;
-  color: black;
+  
 }
+
 
 /* --- Navigation Bar (No Change) --- */
 .nav {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   min-height: 100px;
   padding: 10px 20px;
@@ -23,22 +22,19 @@ a, a:visited, a:active {
 }
 
 .nav_logo {
-  display: flex;
-  flex-direction: row;
   justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
 }
 
 .nav_links {
-  display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  
   width: 100%;
 }
 
 .nav_links div a {
   padding: 10px 15px;
+  color:black;
 }
 
 .links a {
