@@ -56,6 +56,12 @@ html,body {
 .footer_logo{
   height:100px;
 }
+.social_icons{
+  margin-top:10px;
+  column-gap:15px;
+  display:flex;
+  flex-direction:row;
+}
 @media only screen and (max-width: 1050px) {
   .footer{
     font-size:14px;
