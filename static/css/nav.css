@@ -8,6 +8,7 @@
 
 a, a:visited, a:active {
   text-decoration: none;
+  cursor: pointer;
   
 }
 
@@ -24,6 +25,9 @@ a, a:visited, a:active {
   position: relative;
   right: 45px;
   top:7px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
 }
 .nav_logo {
   justify-content: center !important;
