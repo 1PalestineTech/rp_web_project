@@ -82,7 +82,10 @@ span{
   flex-wrap:wrap;
 }
 
-
+.image-container:hover{
+background-color: rgba(122,122,122,0.6);
+    cursor:pointer;
+}
  .image-container {
             /* --- Container Styles --- */
    
@@ -92,7 +95,7 @@ span{
             overflow: hidden;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
-            background-color: rgba(0,0,0,0.4); /* Fallback color while image loads */
+            background-color: rgba(255,255,255,0.2); /* Fallback color while image loads */
         }
 
         .image-container .background-img {
@@ -111,6 +114,7 @@ span{
 img.background-img{
   opacity:0.8;
 }
+
         .image-container .content {
             /* --- Content Styles --- */
             position: relative; /* Allows z-index to work */
@@ -126,7 +130,7 @@ img.background-img{
             color: white;
             font-size: 2rem;
             font-family: sans-serif;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         /* --- The Hover Effect --- */
