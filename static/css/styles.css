@@ -642,7 +642,7 @@ img,span{
 /* responsive*/
 
 @media only screen and (max-width: 1200px) {
-  .font-18,.font-16{
+  .font-20.font-18,.font-16{
     font-size:14px;
   }
   .font-30,.font-24{
