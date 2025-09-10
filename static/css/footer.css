@@ -1,18 +1,12 @@
-
-
-
 .footer{
  background-color:#A50307;
  color:white;
-
-
-  padding:45px;
+padding:45px;
 }
 
 .mission{
   width:55%;
   min-width:350px;
-  row-gap:20px;
 }
 
 .line{
@@ -36,7 +30,4 @@
     padding-top:30px;
      border-top:white solid 2px;
   }
-  /*.w-300{
-    width:25%;
-  }*/
 }
