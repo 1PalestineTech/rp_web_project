@@ -610,6 +610,10 @@ a, a:visited, a:active {
 .text_right{
   text-align:right;
 }
+.ellipsis
+{
+  text-overflow: ellipsis;
+}
 /* font style*/
 .font_italic{
   font-style:italic;
