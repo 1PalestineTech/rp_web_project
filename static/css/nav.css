@@ -18,8 +18,7 @@ a, a:visited, a:active {
   justify-content: center;
   min-height: 100px;
   padding: 10px 20px;
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #dee2e6;
+  background-color: #ffffff;
 }
 .search_icon{
   position: relative;
