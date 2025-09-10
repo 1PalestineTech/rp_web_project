@@ -28,7 +28,7 @@
     font-size:14px;
   }
   .mission,.impact{
-    width:100%;
+    width:100% !important;
    
   }
   .impact{
