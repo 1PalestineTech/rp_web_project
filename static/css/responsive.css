@@ -1,7 +1,8 @@
 @media screen and (max-width: 640px)  {
 
 }
-@media screen and (max-width: 980px) and (min-width: 641px){
+@media screen and (max-width: 980px) {
+
     .hero_image{
         width:100%;
     }
