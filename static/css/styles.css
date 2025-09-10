@@ -3,10 +3,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
+  
 
 }
-
+.overflow_hidden{
+  overflow: hidden;
+}
 html,body {
     height:100%;
 }
