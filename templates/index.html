@@ -1,32 +1,84 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class="slider_timeline">
-    <span class="arrow left_arrow" onclick="previous_slide()"></span>
-    <a href="timeline/1" class="slide_img"></a>
-    <a href="timeline/2" class="slide_img"></a>
-    <a href="timeline/3" class="slide_img"></a>
-    <a href="timeline/4" class="slide_img"></a>
-    <a href="timeline/5" class="slide_img"></a>
-    <a href="timeline/6" class="slide_img"></a>
-    <a href="timeline/7" class="slide_img"></a>
-    <a href="timeline/8" class="slide_img"></a>
-    <a href="timeline/9" class="slide_img"></a>
-    
-    <a href="timeline/10" class="slide_img" style="display:none;"></a>
-    <a href="timeline/11" class="slide_img" style="display:none;"></a>
-    <a href="timeline/12" class="slide_img" style="display:none;"></a>
-    <a href="timeline/13" class="slide_img" style="display:none;"></a>
-    <a href="timeline/14" class="slide_img" style="display:none;"></a>
-    <a href="timeline/15" class="slide_img" style="display:none;"></a>
-    <a href="timeline/16" class="slide_img" style="display:none;"></a>
-    <a href="timeline/17" class="slide_img" style="display:none;"></a>
-    <a href="timeline/18" class="slide_img" style="display:none;"></a>
-    <a href="timeline/19" class="slide_img" style="display:none;"></a>
-    <a href="timeline/20" class="slide_img" style="display:none;"></a>
-    <span class="arrow right_arrow" onclick="next_slide()"></span>
-</div>
-<div class="main">
-<h1>Palestine Through Time</h1>
-<p>4,000 Years Of History, Culture & Heritage</p>
-</div>
+<div class="flex_column hero">
+    <div class="flex_row">
+      <div class="w-70"><img class="w-90" src="/static/Images/hero_image.png"></div>
+      <div class="w-30 flex_column f_spaceb mt-30">
+        <div>
+          <h2 class="hero_title">WELCOME TO 1PALESTINE</h2>
+          <p class="hero_p font-20">1Palestine is spearheading an advancement in the Palestinian Liberation movement through engaging stories and deep dives into the rich history of Palestine. We highlight the stories, the memories and the landscapes of Palestine.</p>
+        </div>
+        <div>
+          <span class="special_red italic">READ MORE</span>
+        </div>
+      </div>
+    </div>
+    <div class="flex_column ">
+      <div class="flex_row f_spaceb font-14 mb-30"><span>NEWLY ADDED ARTICLES</span><span><i class="mr-10 fa-solid fa-arrow-left"></i> <i class="fa-solid fa-arrow-right"></i></span></div>
+       <div class="flex_row column-gap-20 fx-wrap rg-20">
+         <div class="image-container">
+             <img src="/static/Images/image1.png" alt="Laptop on a desk" class="background-img">
+        
+             <div class="flex_column m-10 rg-80 h-350">
+                 <div>
+                     <span class="font-14 mb-30">DEBUNKING MYTHS</span>
+                     <p class="font-20 weight-700 ">What does the phrase a land without people for a people without a land mean?</p>
+                 </div>
+                 <div >
+                     <span class="special_red italic">HANDALA APPROVED</span>
+                 </div>
+             </div>
+         </div>
+         
+         <div class="image-container">
+             <img src="/static/Images/image2.png" alt="Laptop on a desk" class="background-img">
+       
+             <div class="flex_column m-10 rg-80 h-350">
+                 <div>
+                     <span class="font-14 mb-30">MUSIC</span>
+                     <p class="font-20 weight-700 ">The Intifada 1987 | Riad Awwad, Hanan Awwad and Mahmoud Darwish</p>
+                 </div>
+                 <div >
+                     <span class="special_red italic"></span>
+                 </div>
+             </div>
+         </div>
+         <div class="image-container">
+             <img src="/static/Images/image3.png" alt="Laptop on a desk" class="background-img">
+       
+             <div class="flex_column m-10 rg-80 h-350">
+                 <div>
+                    <span class="font-14 mb-30">LEBANON</span>
+                    <p class="font-20 weight-700 ">Why does no one remember the Sabra and Shatila massacre?</p>
+                 </div>
+                 <div >
+                    <span class="special_red italic">HANDALA APPROVED</span>
+                 </div>
+             </div>
+         </div>
+         <div class="image-container">
+             <img src="/static/Images/image4.png" alt="Laptop on a desk" class="background-img">
+       
+             <div class="flex_column m-10 rg-80 h-350">
+                 <div>
+                    <span class="font-14 mb-30">CULTURE</span>
+                    <p class="font-20 weight-700 ">Threading Together Palestinian National Identity</p>
+                  </div>
+                  <div >
+                    <span class="special_red italic"></span>
+                  </div>
+             </div>
+          </div>
+    </div>
+    <div class="flex_column">
+      <div class="flex_row f_spaceb font-14"><span>PALESTINE THROUGH HISTORY</span><span><i class="mr-10 fa-solid fa-arrow-left"></i> <i class="fa-solid fa-arrow-right"></i></span></div>
+       <div>
+    </div>
+    </div>
+  <div class="flex_column">
+    <div class="flex_row f_spaceb font-14"><span>GET INVOLVED</span><span><i class="mr-10 fa-solid fa-arrow-left"></i> <i class="fa-solid fa-arrow-right"></i></span></div>
+    <div>
+    </div>
+  </div>
+  </div>
 {% endblock %}

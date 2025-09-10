@@ -1,0 +1,148 @@
+/* --- General Styles (No Change) --- */
+* {
+  font-family: 'Rubik', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+span{
+  display:inline-block;
+}
+.flex_column{
+   display:flex;
+  flex-direction:column;
+}
+.flex_row{
+  display:flex;
+  flex-direction:row;
+  
+}
+.f_spaceb{
+ justify-content:space-between; 
+}
+.column-gap-20{
+  column-gap:35px;
+}
+.font-14{
+  font-size:14px;
+}
+.font-20{
+  font-size:20px;
+}
+.w-30{
+  width:30%;
+}
+.w-70{
+  width:70%;
+}
+.w-90{
+  width:90%;
+}
+.rg-80{
+  row-gap:80px;
+}
+.hero{
+  margin:50px;
+  row-gap:40px;
+}
+.hero_title{
+  margin-bottom:20px;
+  color:#A50307;
+  padding:10px;
+  border-bottom:2px solid #A50307;
+}
+.hero_p {
+  line-height:28px;
+}
+.special_red{
+  color:#A50307;
+  font-weight:700;
+  font-style:italic;
+}
+.weight-700{
+   font-weight:700;
+}
+.mr-10{
+  margin-right:10px;
+}
+.mb-30{
+  margin-bottom:30px;
+}
+.h-350{
+  height:350px;
+}
+.m-10{
+  margin:10px;
+}
+.mt-30{
+  margin-top:30px;
+}
+.fx-wrap{
+  flex-wrap:wrap;
+}
+
+
+ .image-container {
+            /* --- Container Styles --- */
+   
+            position: relative; /* Crucial for layering child elements */
+            width: 23%;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            background-color: #fff; /* Fallback color while image loads */
+        }
+
+        .image-container .background-img {
+            /* --- Image Styles --- */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Behaves like background-size: cover */
+            
+
+            transition: opacity 0.4s ease-in-out; /* Smooth transition */
+            z-index: 1; /* Base layer */
+        }
+img.background-img{
+  opacity:0.2;
+}
+        .image-container .content {
+            /* --- Content Styles --- */
+            position: relative; /* Allows z-index to work */
+            z-index: 2; /* Sits on top of the image (z-index: 1) */
+            
+            /* Center the text */
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* Text styling */
+            color: white;
+            font-size: 2rem;
+            font-family: sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        /* --- The Hover Effect --- */
+        .image-container:hover .background-img {
+            opacity: 0.4; /* On hover, the image becomes less opaque */
+        }
+.rg-20{
+  row-gap:20px;
+}
+@media only screen and (max-width: 1400px) {
+  .image-container {
+    width:30%;
+  }
+}
+@media only screen and (max-width: 1050px) {
+  .image-container {
+    width:90%;
+  }
+}
