@@ -1,7 +1,14 @@
 /* --- General Styles (No Change) --- */
 
 
+.hero_image{
+  width:70%;
 
+}
+.hero_description{
+  width:25%;
+
+}
 .hero_title{
   margin-bottom:20px;
   color:#A50307;
