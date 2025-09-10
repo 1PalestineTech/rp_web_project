@@ -22,10 +22,10 @@ a, a:visited, a:active {
 }
 .search_icon{
   position: relative;
-  right: 45px;
-  top:7px;
-  width: 30px;
-  height: 30px;
+  right: 35px;
+  top:5px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
 }
 .nav_logo {
