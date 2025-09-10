@@ -239,6 +239,24 @@
   word-spacing:25px;
 }
 /* responsive*/
+
+@media only screen and (max-width: 1200px) {
+  .font-18,.font-16{
+    font-size:14px;
+  }
+  .font-30,.font-24{
+    font-size:20px;
+  }
+  .font-50,.font-40{
+    font-size:30px;
+  }
+  .line-40,.line-35{
+    line-height:30px;
+  }
+  .line-50{
+    line-height:40px;
+  }
+}
 @media only screen and (max-width: 768px) {
   .font-20,.font-18,.font-16{
     font-size:14px;
