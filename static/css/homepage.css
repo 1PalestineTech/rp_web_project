@@ -109,7 +109,7 @@ span{
             z-index: 1; /* Base layer */
         }
 img.background-img{
-  opacity:0.2;
+  opacity:0.8;
 }
         .image-container .content {
             /* --- Content Styles --- */
@@ -131,7 +131,7 @@ img.background-img{
 
         /* --- The Hover Effect --- */
         .image-container:hover .background-img {
-            opacity: 0.4; /* On hover, the image becomes less opaque */
+            opacity: 0.3; /* On hover, the image becomes less opaque */
         }
 .rg-20{
   row-gap:20px;
