@@ -92,7 +92,7 @@ span{
             overflow: hidden;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
-            background-color: #fff; /* Fallback color while image loads */
+            background-color: rgba(0,0,0,0.4); /* Fallback color while image loads */
         }
 
         .image-container .background-img {
@@ -131,7 +131,7 @@ img.background-img{
 
         /* --- The Hover Effect --- */
         .image-container:hover .background-img {
-            opacity: 0.3; /* On hover, the image becomes less opaque */
+            opacity: 1; /* On hover, the image becomes less opaque */
         }
 .rg-20{
   row-gap:20px;
