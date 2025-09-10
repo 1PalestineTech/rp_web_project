@@ -238,3 +238,15 @@
 .word-25{
   word-spacing:25px;
 }
+/* responsive*/
+@media only screen and (max-width: 768px) {
+  .font-20,.font-18,.font-16{
+    font-size:14px;
+  }
+  .line-20,.line-25,.line-30,.line-35{
+    line-height:20px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  
+}
