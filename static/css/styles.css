@@ -567,6 +567,15 @@ img,span{
 .row-gap-50{
   row-gap:50px;
 }
+.row-gap-60{
+  row-gap:60px;
+}
+.row-gap-70{
+  row-gap:70px;
+}
+.row-gap-80{
+  row-gap:80px;
+}
 /* font weight */
 .weight-400{
   font-weight:400;
