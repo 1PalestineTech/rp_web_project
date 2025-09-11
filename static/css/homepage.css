@@ -90,12 +90,12 @@ img.background-img{
 }
 @media only screen and (max-width: 780px) {
   .image-container {
-    width:32%;
+    width:24%;
   }
 }
 @media screen and (max-width: 1020px){
     .image-container {
-    width:47%;
+    width:32%;
   }
     .hero{
         flex-direction: column;
