@@ -1,8 +1,33 @@
 
 {% extends "layout.html" %}
 {% block content %}
-<section class="articles">
-
+<!--<section class="articles">-->
+  <div class="flex_column m-20">
+    <div class="flex_column row-gap-20">
+      <div class ="text_center font-20" >
+        <span> Documents</span>
+      </div>
+      <div class="flex_row jc_spaceb">
+        <div>
+          <input class="font-18 p-5" type="search" placeholder="Search">
+        </div>
+        <div>
+          <span class="mr-10 font-18 ">Sort By Title</span>
+          <span class="font-18">Filter By All Types</span>
+        </div>
+      </div>
+    </div>
+    <div class="flex_row jc_spaceb mt-30">
+        {% for row in rows %}
+      <div class="rf_column h-350px">
+        <img class="w-100"src="/static/cover.png">
+        <p class="font-24 weight-700"><a  href="article/{{row[0]}}">{{row[1]}}</a></p>
+      </div>
+      
+      {% endfor %}
+    </div>
+  </div>
+  <!--
                 <h2>Palestine Articles</h2>
                 {{ form.csrf_token }}
                 <div>
@@ -43,8 +68,8 @@
                     </div>
                 {% endfor %}
                 </div>
-   
-</section>
+   -->
+<!--</section>
 <script src="/static/js/article.js"></script>
-<script src="/static/js/filter.js"></script>
+<script src="/static/js/filter.js"></script>-->
 {% endblock %}

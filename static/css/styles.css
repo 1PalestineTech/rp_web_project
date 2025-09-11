@@ -679,3 +679,23 @@ a, a:visited, a:active {
     line-height:40px;
   }
 }
+.rf_column {
+    width:24% !important;
+  }
+@media screen and (max-width: 1020px){
+    .rf_column {
+    width:30% !important;
+  }
+    
+}
+@media only screen and (max-width: 780px) {
+  .rf_column {
+    width:47% !important;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .rf_column {
+    width:100% ;
+  }
+}
