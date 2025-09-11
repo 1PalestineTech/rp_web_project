@@ -680,17 +680,17 @@ a, a:visited, a:active {
   }
 }
 .rf_column {
-    width:24% !important;
+    width:24% ;
   }
 @media screen and (max-width: 1020px){
     .rf_column {
-    width:30% !important;
+    width:30% ;
   }
     
 }
 @media only screen and (max-width: 780px) {
   .rf_column {
-    width:47% !important;
+    width:47% ;
   }
 }
 
