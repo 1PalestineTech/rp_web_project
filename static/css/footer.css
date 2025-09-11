@@ -6,7 +6,7 @@ padding:45px;
 
 .mission{
   width:55%;
-  min-width:350px;
+
 }
 
 .line{
@@ -21,6 +21,7 @@ padding:45px;
   .footer{
     font-size:14px;
     padding: 20px;
+    width: 100% !important;
   }
   .mission,.impact{
     width:100% !important;
@@ -37,7 +38,6 @@ padding:45px;
 
 @media only screen and (max-width: 450px) {
     .footer{
-    font-size:14px;
     padding: 5px;
   }
  .mission div p{
