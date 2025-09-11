@@ -20,8 +20,12 @@
     <div class="flex_row jc_spaceb mt-30">
         {% for row in rows %}
       <div class="rf_column h-350px">
-        <img class="w-100"src="/static/cover.png">
+        <div>
+        <img src="/static/cover.png">
+        </div>
+        <div>
         <p class="font-24 weight-700"><a  href="article/{{row[0]}}">{{row[1]}}</a></p>
+        </div>
       </div>
       
       {% endfor %}
