@@ -88,11 +88,6 @@ img.background-img{
     width:24%;
   }
 }
-@media only screen and (max-width: 780px) {
-  .image-container {
-    width:47%;
-  }
-}
 @media screen and (max-width: 1020px){
     .image-container {
     width:32%;
@@ -107,6 +102,12 @@ img.background-img{
         width:100% !important;
     }
 }
+@media only screen and (max-width: 780px) {
+  .image-container {
+    width:47%;
+  }
+}
+
 @media only screen and (max-width: 450px) {
   .image-container {
     width:100%;
