@@ -25,11 +25,6 @@
 }
 
 
-.h-350{
-  height:350px;
-}
-
-
 .image-container:hover{
 background-color: rgba(122,122,122,0.6);
     cursor:pointer;
@@ -93,12 +88,15 @@ img.background-img{
     width:30%;
   }
 }
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 780px) {
   .image-container {
-    width:90%;
+    width:32%;
   }
 }
 @media screen and (max-width: 1020px){
+    .image-container {
+    width:47%;
+  }
     .hero{
         flex-direction: column;
     }
