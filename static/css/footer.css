@@ -35,9 +35,9 @@ padding:45px;
      border-top:white solid 2px;
   }
 }
-@media screen and (max-width: 640px)  {
+@media screen and (max-width: 750px)  {
 	nav ~ div{
-    margin:5px !important;
+    margin:8px !important;
   }
 }
 @media only screen and (max-width: 350px) {
