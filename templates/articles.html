@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 {% block content %}
 <!--<section class="articles">-->
-  <div class="flex_column m-20">
+  <div class="flex_column m-60">
     <div class="flex_column row-gap-20">
       <div class ="text_center font-20" >
         <span> Documents</span>
@@ -17,13 +17,13 @@
         </div>
       </div>
     </div>
-    <div class="flex_row flex_wrap jc_spaceb mt-30">
+    <div class="flex_row flex_wrap row-gap-20 jc_spaceb mt-30">
         {% for row in rows %}
-      <div class="rf_column h-350px overflow_hidden">
+      <div class="rf_column h-350px  overflow_hidden">
         <div class="h-60">
         <img class="w-100 h-100" src="/static/cover.png">
         </div>
-        <div>
+        <div class="mt-10">
         <p class="font-16 weight-700"><a  href="article/{{row[0]}}" style="color:black;">{{row[1]}}</a></p>
         </div>
       </div>
