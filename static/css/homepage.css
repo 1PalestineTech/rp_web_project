@@ -90,7 +90,7 @@ img.background-img{
 }
 @media screen and (max-width: 1020px){
     .image-container {
-    width:32%;
+    width:30%;
   }
     .hero{
         flex-direction: column;
