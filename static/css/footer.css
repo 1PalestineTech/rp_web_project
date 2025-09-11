@@ -20,7 +20,7 @@ padding:45px;
 @media only screen and (max-width: 1050px) {
   .footer{
     font-size:14px;
-    padding: 20px;
+    padding: 20px ;
     width: 100% !important;
   }
   .mission,.impact{
@@ -38,7 +38,7 @@ padding:45px;
 
 @media only screen and (max-width: 350px) {
     .footer{
-    padding: 5px;
+    padding: 10px !important;
   }
  .mission div p{
     font-size: 15px !important;
