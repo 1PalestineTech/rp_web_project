@@ -19,12 +19,12 @@
     </div>
     <div class="flex_row flex_wrap jc_spaceb mt-30">
         {% for row in rows %}
-      <div class="rf_column h-350px">
+      <div class="rf_column h-350px overflow_hidden">
         <div>
-        <img src="/static/cover.png">
+        <img class="w-100" src="/static/cover.png">
         </div>
         <div>
-        <p class="font-24 weight-700"><a  href="article/{{row[0]}}">{{row[1]}}</a></p>
+        <p class="font-16 weight-700"><a  href="article/{{row[0]}}" style="color:black;">{{row[1]}}</a></p>
         </div>
       </div>
       
