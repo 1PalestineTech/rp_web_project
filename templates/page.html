@@ -1,15 +1,17 @@
-<!DOCTYPE html>
+
+{% extends "layout.html" %}
+{% block content %}
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Discover the rich tapestry of Palestinian history through an interactive educational journey. Explore cultural heritage, historical timelines, and compelling stories.">
-    
-    <!-- Open Graph Tags -->
+  
     <meta property="og:title" content="{{title}}">
     <meta property="og:description" content="{{desciption}}">
     <meta property="og:image" content="https://www.1palestine.org/cover">
-    <!-- Favicon -->
+    
     <link rel="icon" type="image/ico" href="/static/icons/favicon.ico">
     <link rel="stylesheet" href="/static/css/styles.css">
     <title>1Palestine</title>
@@ -27,12 +29,13 @@
     </nav>
 <div class="article_holder">
     <div class="article_post">
-
+    -->
+      <div class="m-50">
                 <h2>{{title}}</h2>
-                <div>{{data|safe}}</div>
+                <div class="font-18">{{data|safe}}</div>
                 
-            
-
+      </div> 
+<!--
                 </div>
 </div>
 <footer class="footer">
@@ -56,3 +59,5 @@
 </script>
 </body>
 </html>
+-->
+{% endblock %}
