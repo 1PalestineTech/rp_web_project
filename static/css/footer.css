@@ -25,14 +25,22 @@ padding:45px;
     width:100% !important;
    
   }
-  .mission div p{
-    font-size: 15px !important;
-    width:300px !important;
-  }
+ 
 
   .impact{
      margin-top:30px;
     padding-top:30px;
      border-top:white solid 2px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+ .mission div p{
+    font-size: 15px !important;
+    width:300px !important;
+  }
+  .nav_links input{
+    padding:3px;
+    font-size: 14px;
   }
 }
