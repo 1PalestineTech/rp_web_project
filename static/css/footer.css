@@ -39,6 +39,10 @@ padding:45px;
 	nav ~ div{
     margin:8px !important;
   }
+    .nav_links input{
+    padding:3px;
+    font-size: 14px;
+  }
 }
 @media only screen and (max-width: 350px) {
     .footer{
@@ -48,8 +52,5 @@ padding:45px;
     font-size: 15px !important;
     width:300px !important;
   }
-  .nav_links input{
-    padding:3px;
-    font-size: 14px;
-  }
+
 }
