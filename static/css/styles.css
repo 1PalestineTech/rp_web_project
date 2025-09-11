@@ -692,6 +692,10 @@ a, a:visited, a:active {
   .rf_column {
     width:47% ;
   }
+  .rflex{
+  flex-direction: column !important;  
+  row-gap: 15px !important;
+  }
 }
 
 @media only screen and (max-width: 450px) {
