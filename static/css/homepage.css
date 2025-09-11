@@ -80,9 +80,7 @@ img.background-img{
         .image-container:hover .background-img {
             opacity: 1; /* On hover, the image becomes less opaque */
         }
-.rg-20{
-  row-gap:20px;
-}
+
 @media only screen and (max-width: 1400px) {
   .image-container {
     width:24%;
