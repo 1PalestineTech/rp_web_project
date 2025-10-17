@@ -1,6 +1,6 @@
 <nav class="p-30 pl-50 column-gap-20 flex-row ai-center jc-spaceb">
   <div>
-    <img src="url_for('static',filename='images/black_logo.png')" alt="1Palestine Logo" width="150px">
+    <img src="{{url_for('static',filename='images/black_logo.png')}}" alt="1Palestine Logo" width="150px">
   </div>
   
   <div class="nav-toggle flex-row column-gap-30 weight-700">
@@ -68,7 +68,7 @@
   }
 }
 </style>
-<scirpt type="text/javascript">
+<script type="text/javascript">
 let visible = false;
 document.querySelector(".toggle").onclick=()=>{
   let element =document.querySelector(".toggle div");

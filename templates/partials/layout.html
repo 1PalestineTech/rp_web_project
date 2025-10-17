@@ -24,7 +24,7 @@
 
    {% include 'partials/navbar.html' %}
     {% block content %}{% endblock %}
-    {% include 'partials/footer.html' %}
+    
 <script >
   const navToggle = document.querySelector(".nav_toggle");
 const linksContainer = document.querySelector(".links");
@@ -34,7 +34,8 @@ navToggle.onclick = () => {
   // ...add or remove the 'active' class from the links container.
   linksContainer.classList.toggle('active');
 };</script>
-<script src="/static/js/script.js">
+<script src="{{url_for('static',filename='js/script.js')}}">
 </script>
+{% include 'partials/footer.html' %}
 </body>
 </html>
