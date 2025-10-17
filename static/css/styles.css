@@ -6,7 +6,7 @@
   
 
 }
-.overflow_hidden{
+.overflow-hidden{
   overflow: hidden;
 }
 html,body {
@@ -507,42 +507,42 @@ a, a:visited, a:active {
 
 /* flexbox */
 
-.flex_row{
+.flex-row{
   display:flex;
   flex-direction:row; 
 }
-.flex_column{
+.flex-column{
    display:flex;
   flex-direction:column;
 }
-.flex_wrap{
+.flex-wrap{
   flex-wrap:wrap;
 }
-.jc_center{
+.jc-center{
   justify-content:center;
 }
-.jc_flexstart{
+.jc-flexstart{
   justify-content:flex-start;
 }
-.jc_flexend{
+.jc-flexend{
   justify-content:flex-end;
 }
-.jc_spaceb{
+.jc-spaceb{
   justify-content:space-between;
 }
-.jc_spacea{
+.jc-spacea{
   justify-content:space-around;
 }
-.ai_center{
+.ai-center{
   align-items:center;
 }
-.ai_flexstart{
+.ai-flexstart{
   align-items:flex-start;
 }
-.ai_flexend{
+.ai-flexend{
   align-items:flex-end;
 }
-.ai_stretch{
+.ai-stretch{
   align-items:stretch;
 }
 .column-gap-10{
@@ -604,13 +604,13 @@ a, a:visited, a:active {
   font-weight:900;
 }
 /* text align */
-.text_left{
+.text-left{
   text-align:left;
 }
-.text_center{
+.text-center{
   text-align:center;
 }
-.text_right{
+.text-right{
   text-align:right;
 }
 .ellipsis
@@ -618,28 +618,16 @@ a, a:visited, a:active {
   text-overflow: ellipsis;
 }
 /* font style*/
-.font_italic{
+.font-italic{
   font-style:italic;
 }
-.font_normal{
+.font-normal{
   font-style:normal;
 }
 
 /* line height */
 .line-20{
   line-height:20px;
-}
-.line-21{
-  line-height:20px;
-}
-.line-22{
-  line-height:22px;
-}
-.line-23{
-  line-height:23px;
-}
-.line-24{
-  line-height:24px;
 }
 .line-25{
   line-height:25px;
@@ -691,27 +679,40 @@ a, a:visited, a:active {
     line-height:40px;
   }
 }
-.rf_column {
-    width:24% ;
+.rf-column {
+    width:24% !important;
+  }
+.toggle{
+    display:none;
   }
 @media screen and (max-width: 1020px){
-    .rf_column {
-    width:30% ;
+    .rf-column {
+    width:30% !important;
   }
+ 
     
 }
 @media only screen and (max-width: 780px) {
-  .rf_column {
-    width:47% ;
+  .rf-column {
+    width:47% !important;
   }
-  .rflex{
-  flex-direction: column !important;  
-  row-gap: 15px !important;
+    .toggle{
+    display:block !important;
   }
+  
 }
 
 @media only screen and (max-width: 450px) {
-  .rf_column {
+  .rf-column {
     width:100% ;
   }
+
+}
+
+footer{
+  background:#000000;
+  color:white;
+}
+.toggle div{
+  display:none;
 }

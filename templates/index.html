@@ -1,153 +1,98 @@
-{% extends "layout.html" %}
+{% extends "./partials/layout.html" %}
 {% block content %}
-
-
-<div class="flex_column m-50 row-gap-40">
-    <div class="hero flex_row flex_wrap jc_spaceb">
-      <div class="hero_image"><img class="w-100 h-100" src="/static/Images/hero_image.png"></div>
-      <div class="hero_description flex_column jc_spaceb mt-30">
-        <div>
-          <h2 class="hero_title">WELCOME TO 1PALESTINE</h2>
-          <p class="hero_p font-20">1Palestine is spearheading an advancement in the Palestinian Liberation movement through engaging stories and deep dives into the rich history of Palestine. We highlight the stories, the memories and the landscapes of Palestine.</p>
-        </div>
-        <div class="mt-20">
-          <span class="special_red font_italic weight-700 mt-20">READ MORE</span>
-        </div>
+<main class ="flex-column  w-100 h-100">
+  <div class ="flex-column p-50 ai-center jc-spaceb w-100 h-100 text-center">
+    <div></div>
+    <div>
+      <h1>Palestine Under British Mandate</h1>
+      <p>Palestinian society thrives with rich cultural traditions, agriculture, and urban centers before the systematic displacement begins</p>
+    </div>
+    <div>
+      <div>
+      <div class="timespam flex-row column-gap-20 mb-20">
+        <span>1920</span>
+        <span>1948</span>
+        <span>1967</span>
+        <span>1987</span>
+        <span>1987</span>
+      </div>
+        <hr>
+       </div>
+    </div>
+  </div>
+  
+  <div class="m-50 pt-20 pb-20 w-100">
+    <p class="font-50">Sed ut perspiciatis unde omnis iste natus error sit voluptatem  accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo<p>
+  </div>
+  
+  <div class="p-50 flex-column jc-center ai-center row-gap-30">
+    <div class="mt-50"><span class="font-30 weight-700" >Our Impact So Far</span></div>
+    <div class="flex-row  jc-spacea flex-wrap column-gap-20 row-gap-20">
+      <div class="flex-column text-center row-gap-10">
+        <div class="font-24 weight-700">15k+</div>
+          <span class="font-16 weight-700">Lorem ipsum dolor sit ame</span>
+          <p style="" class="font-14 weight-500 ellipsis">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+      </div>
+      <span class="v-line"></span>
+       <div class="flex-column text-center row-gap-10">
+        <div class="font-24 weight-700">15k+</div>
+          <span class="font-16 weight-700">Lorem ipsum dolor sit ame</span>
+          <p class="font-14 weight-500 ellipsis">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+      </div>
+      <span class="v-line"></span>
+       <div class="flex-column text-center row-gap-10">
+        <div class="font-24 weight-700">15k+</div>
+          <span class="font-16 weight-700">Lorem ipsum dolor sit ame</span>
+          <p class="font-14 weight-500 ellipsis">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+      </div>
+      <span class="v-line"></span>
+       <div class="flex-column text-center row-gap-10">
+        <div class="font-24 weight-700">15k+</div>
+          <span class="font-16 weight-700">Lorem ipsum dolor sit ame</span>
+          <p class="font-14 weight-500 ellipsis">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
       </div>
     </div>
-    <div class="flex_column ">
-      <div class="flex_row jc_spaceb font-14 mb-30"><span>NEWLY ADDED ARTICLES</span><span><i class="mr-10 fa-solid fa-arrow-left"></i> <i class="fa-solid fa-arrow-right"></i></span></div>
-       <div class="flex_row jc_spaceb flex_wrap row-gap-20">
-         <div class="image-container">
-             <img src="/static/Images/image1.png" alt="Laptop on a desk" class="background-img">
-        
-             <div class="flex_column m-10 row-gap-80 h-350px">
-                 <div>
-                     <span class="font-14 mb-30">DEBUNKING MYTHS</span>
-                     <p class="font-20 weight-700 ">What does the phrase a land without people for a people without a land mean?</p>
-                 </div>
-                 <div >
-                     <span class="special_red italic">HANDALA APPROVED</span>
-                 </div>
-             </div>
-         </div>
-         
-         <div class="image-container">
-             <img src="/static/Images/image2.png" alt="Laptop on a desk" class="background-img">
-       
-             <div class="flex_column m-10 row-gap-80 h-350px">
-                 <div>
-                     <span class="font-14 mb-30">MUSIC</span>
-                     <p class="font-20 weight-700 ">The Intifada 1987 | Riad Awwad, Hanan Awwad and Mahmoud Darwish</p>
-                 </div>
-                 <div >
-                     <span class="special_red italic"></span>
-                 </div>
-             </div>
-         </div>
-         <div class="image-container">
-             <img src="/static/Images/image3.png" alt="Laptop on a desk" class="background-img">
-       
-             <div class="flex_column m-10 row-gap-80 h-350px">
-                 <div>
-                    <span class="font-14 mb-30">LEBANON</span>
-                    <p class="font-20 weight-700 ">Why does no one remember the Sabra and Shatila massacre?</p>
-                 </div>
-                 <div >
-                    <span class="special_red italic">HANDALA APPROVED</span>
-                 </div>
-             </div>
-         </div>
-         <div class="image-container">
-             <img src="/static/Images/image4.png" alt="Laptop on a desk" class="background-img">
-       
-             <div class="flex_column m-10 row-gap-80 h-350px">
-                 <div>
-                    <span class="font-14 mb-30">CULTURE</span>
-                    <p class="font-20 weight-700 ">Threading Together Palestinian National Identity</p>
-                  </div>
-                  <div >
-                    <span class="special_red italic"></span>
-                  </div>
-             </div>
-          </div>
-    </div>
-    </div>
-
-    <div class="flex_column">
-      <div class="flex_row jc_spaceb font-14 mb-30"><span>PALESTINE THROUGH HISTORY</span><span><i class="mr-10 fa-solid fa-arrow-left"></i> <i class="fa-solid fa-arrow-right"></i></span></div>
-      <div class="hero flex_row jc_spaceb row-gap-20">
-         <div class="hero_image "><img class="w-100 h-100 max-h-400" src="/static/Images/timeline1.png"> </div>
-         <div class="flex_column jc_spaceb hero_description max-h-400 ">
-            <div class="overflow_hidden">
-              <span class="mb-20">1920-1948</span>
-              <h3 class="font-24 mb-30">MANDATORY PALESTINE</h3>
-              <p class="font-18 line-25 weight-500 ">The Mandate for Palestine was a League of Nations mandate for British administration of the territories of Palestine and Transjordan – which had been part of the Ottoman Empire for four centuries – following the defeat of the Ottoman Empire in World War I. The mandate was assigned to Britain by the San Remo conference in April 1920, after France's concession in the 1918 Clemenceau–Lloyd George Agreement. 
-
-Mandatory Palestine was a British geopolitical entity that existed between 1920.</p>
-            </div>
-            <div class="mt-20">
-              <span class="special_red font_italic weight-700">READ MORE</span>
-            </div>
-          </div>
-    </div>
-    </div>
+  </div>
+</main>
+<style>
+  main >div{
+    min-height:500px;
+  }
+  main >div:last-child{
+    background:#D9D9D9;
+  }
+  main >div:last-child p{
+    max-width:250px;
+  }
+  
+  main > div:first-child{
+    background:black;
+    color:white;
+  }
+  div.timespam span::before{
+    content:"";
+    display:block;
+    background:white;
+    border-radius:50%;
+    width:12px;
+    height:12px;
+    position:relative;
+    top:35px;
+    left:15px;
     
-    
-  <div class="flex_column">
-    <div class="flex_row jc_spaceb font-14 mb-30"><span>GET INVOLVED</span><span><i class="mr-10 fa-solid fa-arrow-left"></i> <i class="fa-solid fa-arrow-right"></i></span></div>
-    <div class="flex_row jc_spaceb flex_wrap row-gap-20">
-         <div class="image-container">
-             <img src="/static/Images/image5.png" alt="Laptop on a desk" class="background-img">
-        
-             <div class="flex_column h-350px">
-                 <div class="h-60">
-                     
-                 </div>
-                 <div class="text_center" >
-                     <span class="font-24 weight-700 w-70">Volunteer Opportunities</span>
-                 </div>
-             </div>
-         </div>
-         
-         <div class="image-container">
-             <img src="/static/Images/image6.png" alt="Laptop on a desk" class="background-img">
-       
-             <div class="flex_column h-350px">
-                 <div class="h-60">
-                     
-                 </div>
-                 <div class="text_center">
-                     <span class="font-24 weight-700 w-70"> Debunking Zionist Propaganda </span>
-                 </div>
-             </div>
-         </div>
-         <div class="image-container">
-             <img src="/static/Images/image7.png" alt="Laptop on a desk" class="background-img">
-       
-             <div class="flex_column h-350px">
-                 <div class="h-60">
-                    
-                 </div>
-                 <div class="text_center">
-                    <span class="font-24 weight-700 w-70">Submit a Project</span>
-                 </div>
-             </div>
-         </div>
-         <div class="image-container">
-             <img src="/static/Images/image8.png" alt="Laptop on a desk" class="background-img">
-       
-             <div class="flex_column h-350px">
-                 <div class="h-60">
-                    
-                  </div>
-                  <div class="text_center">
-                    <span class="font-24 weight-700 text_center w-70">Mutual Aid</span>
-                  </div>
-             </div>
-          </div>
-  </div>
-  </div>
-  </div>
+  }
+  hr{
+    border:solid 1px white;
+    margin-left:20px;
+    margin-right:10px;
+    position:relative;
+    bottom:10px;
+  }
+  .v-line{
+    width:2px;
+    background:black;
+    height:100%;
+  }
+</style>
   
 {% endblock %}

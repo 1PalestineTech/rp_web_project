@@ -1,84 +1,42 @@
-from flask import Flask, render_template, request, redirect, session, url_for, send_from_directory,jsonify,send_file
-from flask_wtf import FlaskForm,CSRFProtect
-from wtforms import StringField, SubmitField, SelectField, TextAreaField,HiddenField
-from wtforms.validators import DataRequired
-from flask_ckeditor import CKEditor, CKEditorField, upload_fail, upload_success
+'''from flask import Flask, render_template, request, redirect, session, url_for, send_from_directory,jsonify,send_file
+from flask_wtf import CSRFProtect
+from flask_ckeditor import CKEditor, upload_fail, upload_success
 from flask_session import Session
-import re, sqlite3, shortuuid, os.path, os, shutil
-from werkzeug.security import check_password_hash, generate_password_hash
+import shortuuid, os.path, os, shutil
 from src.utils import login_required, admin
-
+from forms.postform import PostForm
+from models import db
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 app = Flask(__name__)
+
+
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
+ckeditor = CKEditor(app)
+csrf = CSRFProtect(app)
 
 app.config['CKEDITOR_SERVE_LOCAL'] = True
 app.config['CKEDITOR_HEIGHT'] = 400
 app.config['CKEDITOR_FILE_UPLOADER'] = 'upload'
 app.config['CKEDITOR_ENABLE_CSRF'] = True  
 app.config['UPLOADED_PATH'] = os.path.join(basedir, 'uploads')
-app.secret_key = 'soifaoijfaqd4894'
-ckeditor = CKEditor(app)
-csrf = CSRFProtect(app)
+app.secret_key = 'to fix csrf token error'
 
-class PostForm(FlaskForm):
-    title = StringField('Title')
-    tags = SelectField('Tags', choices=[])  # Set default empty
-    tags_values = HiddenField("tags_values")
-    desciption = TextAreaField('Desciption')
-    body = CKEditorField('Body', validators=[DataRequired()])
-    submit = SubmitField()
-
-    def __init__(self, *args, **kwargs):
-        super(PostForm, self).__init__(*args, **kwargs)
-        try:
-            db = sqlite3.connect(os.path.join(basedir, 'web_data.db'))
-            cursor = db.execute("SELECT * FROM Tags")
-            rows = cursor.fetchall()
-            self.tags.choices = [(row[0], row[1]) for row in rows]
-        except Exception as e:
-            self.tags.choices = []
-            # optionally log e
-class Login(FlaskForm):
-    username = StringField('Username', validators=[DataRequired()])
-    password = StringField('Password', validators=[DataRequired()])
-    submit = SubmitField()
-
-class Delete(FlaskForm):
+class Delete():
     pass
 
 
 #                                        LOGIN
-@app.route('/login', methods = ['GET','POST'])
-def login():
-    form=Login()
-    db = sqlite3.connect('web_data.db')
-    if form.validate_on_submit():
-        username = form.username.data
-        password = form.password.data
-        cursor = db.execute("SELECT * FROM Users WHERE username = (?) ",(username,))
-        rows = cursor.fetchall()
-        if len(rows) != 1 or not check_password_hash(rows[0][2],password):
-            return render_template("error.html", top=403, bottom="Invalid Username And/Or Password",url=request.path),403
-        session["user_id"] = rows[0][0]
-        return redirect("/")
-    else :
-        if not (session.get("user_id") is None):
-            return redirect('/')
-        else:
-            return render_template("login.html",form=form)
-        
 
-#                                        LOGOUT
-@app.route('/logout', methods = ['POST','GET'])
-def logout():
-    session.clear()
-    return redirect('/')
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
+db.init_app(app)
 
+with app.app_context():
+    db.create_all()
 
 
 #                                        CHANGE PASSWORD
@@ -267,17 +225,12 @@ def remove(id):
 
 
 #                                        HOME PAGE (Fixed)
-@app.route('/')
-@app.route('/index')
-def index():
-    return render_template("index.html")
+
 
 
 
 #                                      ABOUT US (Fixed)
-@app.route('/about')
-def about():
-    return render_template("about.html")
+
 @app.route('/timeline')
 def timeline():
     return render_template("timeline.html")
@@ -349,6 +302,14 @@ def page(id="empty"):
 def serve_image():
     return send_file('static/cover.png', mimetype='image/pngs')
 
+
+if __name__ == "__main__":
+   app.run(host='0.0.0.0')
+'''
+from flask import Flask
+from routes.main import main_bp
+app = Flask(__name__)
+app.register_blueprint(main_bp)
 
 if __name__ == "__main__":
    app.run(host='0.0.0.0')
