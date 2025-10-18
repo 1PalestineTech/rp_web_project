@@ -1,14 +1,8 @@
 {% extends "partials/layout.html" %}
 {% block content %}
 <main class ="flex-column  w-100">
-  <div class ="flex-column p-50 ai-center jc-spaceb w-100 text-center">
-    <div class ="flex-column p-50 ai-center jc-spaceb">
-      <span class="font-50 mb-40 weight-700">About Us</span>
-      <p class="font-24 w-70">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum </p>
-    </div>
-    <div>
-    </div>
-  </div>
+
+  {% include "components/head.html"%}
   <div class="p-50 flex-column jc-center ai-center w-100">
     <p class="font-50">Sed ut perspiciatis unde omnis iste natus error sit voluptatem  accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo<p>
   </div>
@@ -68,38 +62,13 @@
          </div>
     </div>
   </div>
-  <div class="p-50 flex-column ai-center row-gap-20 text-center">
-    <div class="font-30 weight-700 w-30 ">Join Newsletter</div>
-    <div class="w-30">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
-   
-    <div class="w-40">
-       <img class="email_icon" src="{{url_for('static',filename='icons/email.png')}}" alt="email icon">
-      <input class="w-80 p-10 pl-40 font-18" placeholder="Email address">
-      <button class="font-16 signup weight-700">Signup</button>
-    </div>
-  </div>
+  {% include "components/newsletter.html"%}
+
+  
     <!---->
 </main>
 <style>
-    .email_icon{
-    position:relative;
-    left:40px;
-    top:6px;
-    background:white;
-    border:none;
-    }
 
-  .signup{
-    position:relative;
-    right:70px;
-    width:0;
-    background:white;
-    border:none;
-  }
-  main >div:nth-child(5) input{
-    border-radius:8px;
-    border:1px grey solid;
-  }
    .mission div{
      min-width:300px;
      flex-basis: 0;
@@ -111,7 +80,7 @@
 main >div{
     min-height:400px;
   }
-  main >div:nth-child(3),main >div:nth-child(5){
+  main >div:nth-child(3){
     background:#D9D9D9;
   }
   main >div:nth-child(3) p{

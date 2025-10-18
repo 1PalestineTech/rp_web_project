@@ -1,0 +1,37 @@
+<div class="letter_div flex-column jc-center ai-center row-gap-20 text-center">
+    <div class="font-30 weight-700 w-30 ">Join Newsletter</div>
+    <div class="w-30">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+   
+    <div class="w-40">
+       <img class="email_icon" src="{{url_for('static',filename='icons/email.png')}}" alt="email icon">
+      <input class="w-80 p-10 pl-40 font-18" placeholder="Email address">
+      <button class="font-16 signup weight-700">Signup</button>
+    </div>
+  </div>
+
+  <style>
+
+    .email_icon{
+    position:relative;
+    left:40px;
+    top:6px;
+    background:white;
+    border:none;
+    }
+
+  .signup{
+    position:relative;
+    right:70px;
+    width:0;
+    background:white;
+    border:none;
+  }
+  
+  .letter_div input{
+    border-radius:8px;
+    border:1px grey solid;
+  }
+  .letter_div{
+    background:#D9D9D9;
+  }
+  </style>

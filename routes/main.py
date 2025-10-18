@@ -10,4 +10,6 @@ def index():
 
 @main_bp.route('/about')
 def about():
-    return render_template("about.html")
+    return render_template("about.html",
+                           title="About Us",
+                           message="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum")
