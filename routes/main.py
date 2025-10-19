@@ -13,3 +13,9 @@ def about():
     return render_template("about.html",
                            title="About Us",
                            message="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum")
+
+@main_bp.route('/history')
+def history():
+    return render_template("history.html",
+                           title="History",
+                           message="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum")

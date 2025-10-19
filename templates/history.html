@@ -1,0 +1,122 @@
+{% extends "partials/layout.html" %}
+{% block content %}
+<main class ="flex-column  w-100">
+{% include "components/head.html"%}
+<div class="grid m-20 ">
+  <div class="left">
+    <div class="blank"></div>
+    <div class="blank flex-column row-gap-10">
+      <div class="font-16">332-63 BCE</div>
+      <div class="font-18 weight-700">Hellenistic Influence</div>
+      <div>After the Macedonian conquest of the Achaemenid Empire in 330 BC and its disintegration shortly thereafter in the Partition of Babylon and subsequent Wars of the Diadochi, Hellenistic kingdoms were established throughout West Asia), Northeast Africa, and South Asia.</div>
+    </div>
+    <div class="blank"></div>
+    <div class="blank flex-column row-gap-10">
+      <div class="font-16">636-1099 CE</div>
+      <div class="font-18 weight-700">Islamic Golden Age</div>
+      <div>Arab Muslims conquer Palestine. Jerusalem becomes the third holiest city of Islam. Beginning of the Arab-Islamic period.</div>
+    </div>
+    <div class="blank"></div>
+    <div class="blank flex-column row-gap-10">
+      <div class="font-16">1517-1917</div>
+      <div class="font-18 weight-700">Ottoman Empire</div>
+      <div>Palestine becomes part of the Ottoman Empire. The region develops under Ottoman administration.</div>
+    </div>
+    <div class="blank"></div>
+     <div class="blank flex-column row-gap-10">
+      <div class="font-16">1948</div>
+      <div class="font-18 weight-700">The Nakba</div>
+      <div>Establishment of the State of Israel. Over 700,000 Palestinians are expelled or flee. Beginning of the Palestinian diaspora.</div>
+    </div>
+    <div class="blank"></div>
+  </div>
+  <div class="line"></div>
+  <div class="right">
+    <div class="blank flex-column row-gap-10">
+      <div class="font-16">3000 BCE</div>
+      <div class="font-18 weight-700">Peleset</div>
+      <div>The region of Palestine was already settled in the Bronze Age. Canaanites, Philistines, and other peoples lived in this fertile land between the Mediterranean and the Jordan.</div>
+    </div>
+    <div class="blank"></div>
+    <div class="blank flex-column row-gap-10">
+      <div class="font-16">63 BCE</div>
+      <div class="font-18 weight-700">Roman Empire</div>
+      <div>Palestine becomes part of the Roman Empire. The region is called "Palestine," derived from the Philistines.</div>
+    </div>
+    <div class="blank"></div>
+    <div class="blank flex-column row-gap-10">
+      <div class="font-16">1250-1516</div>
+      <div class="font-18 weight-700">Mamluk Sultanate</div>
+      <div>The Mamluk Sultanate, also known as Mamluk Egypt or the Mamluk Empire, was a state that ruled Egypt, the Levant and the Hejaz from the mid-13th to early 16th centuries, with Cairo as its capital. It was ruled by a military caste of mamluks (freed slave soldiers) headed by a sultan. </div>
+    </div>
+    <div class="blank"></div>
+    <div class="blank flex-column row-gap-10">
+      <div class="font-16">1967</div>
+      <div class="font-18 weight-700">Mandatory Palestine</div>
+      <div>Mandatory Palestine was a British administrative territory that existed between 1920 and 1948 in the region of Palestine, and after 1922, under the terms of the League of Nations' Mandate for Palestine. The British took the territory deeming it presently unfit for self-governance.</div>
+    </div>
+    <div class="blank"></div>
+    <div class="blank flex-column row-gap-10">
+      <div class="font-16">1920-1948</div>
+      <div class="font-18 weight-700">Six-Day War</div>
+      <div>Israel occupies the West Bank, Gaza Strip, East Jerusalem, and the Golan Heights. Beginning of the Israeli occupation.</div>
+    </div>
+  </div>
+</div>
+</main>
+<style>
+main >div:first-child{
+    background:black;
+    color:white;
+    min-height:300px;
+  }
+  .black,.line{
+    background:black;
+  }
+  .blue{
+    background:blue;
+  }
+  .line{
+   margin-top:45px;
+    margin-bottom:100px;
+   width:5px; 
+  }
+  .grid{
+    justify-content:center;
+    display:grid;
+    grid-template-columns: 300px 2px 300px;
+    column-gap: 100px;
+	  row-gap: 20px;
+    background-image: url('{{url_for('static',filename="images/history_background.png")}}');
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  }
+  .left,.right{
+    display:grid;
+    grid-template-rows: repeat(8,250px);
+  }
+  .left{
+    text-align:left;
+  }
+  .left{
+    text-align:right;
+  }
+  @media only screen and (max-width: 850px) {
+    
+ .grid{
+    grid-template-columns: 220px 2px 220px !important;
+    column-gap: 50px !important;
+  }
+  }
+   @media only screen and (max-width: 580px) {
+    .grid{
+        grid-template-columns: 120px 2px 120px;
+        column-gap: 30px !important;
+    background-size: 60px;
+  }
+  }
+  
+</style>
+{% endblock %}
