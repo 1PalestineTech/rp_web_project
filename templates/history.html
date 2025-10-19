@@ -77,9 +77,23 @@ main >div:first-child{
     background:blue;
   }
   .line{
-   margin-top:45px;
-    margin-bottom:100px;
+   margin-top:50px;
+    margin-bottom:110px;
    width:5px; 
+  }
+    .blank::before{
+    content:"";
+    width:80px;
+    height:5px;
+    background-color:black;
+    position:relative;
+    top:50px;
+  }
+  .right> div.blank::before{
+    right:100px;
+  }
+  .left> div.blank::before{
+    left:320px;
   }
   .grid{
     justify-content:center;
@@ -109,6 +123,17 @@ main >div:first-child{
     grid-template-columns: 220px 2px 220px !important;
     column-gap: 50px !important;
   }
+   .blank::before{
+    content:"";
+    width:40px;
+
+  }
+  .right> div.blank::before{
+    right:50px;
+  }
+  .left> div.blank::before{
+    left:230px;
+  }
   }
    @media only screen and (max-width: 580px) {
     .grid{
@@ -116,6 +141,18 @@ main >div:first-child{
         column-gap: 30px !important;
     background-size: 60px;
   }
+  .blank::before{
+    content:"";
+    width:20px;
+
+  }
+  .right> div.blank::before{
+    right:30px;
+  }
+  .left> div.blank::before{
+    left:230px;
+  }
+  
   }
   
 </style>
