@@ -1,0 +1,130 @@
+{% extends "partials/layout.html" %}
+{% block content %}
+
+<main class ="flex-column  w-100">
+{% include "components/head.html"%}
+  <div class="ai-center m-50 flex-row column-gap-30">
+    <span class="font-18">Sort by</span>
+    <select class="p-5 pr-20 font-18" name="filter1">
+    <option class="font-16" value="new">Newest First</option>
+    <option class="font-16" value="view">Views</option>
+    <option class="font-16" value="recomandation">Recomanded</option>
+  </select>
+  <select class="p-5 pr-20 font-18" name="filter2">
+    <option class="font-16" value="all">All Tags</option>
+    <option class="font-16" value="history">History</option>
+    <option class="font-16" value="myths">Myths</option>
+    <option class="font-16" value="culture">Culture</option>
+  </select>
+    <span class="js-end font-18">30 Articles</span></div>
+  <div class="m-50 flex-column row-gap-50">
+    <div class="rflex  flex-row column-gap-30 flex-wrap">
+      <img class="w-20" src="https://picsum.photos/300/200">
+      <div class="w-50 flex-column jc-center row-gap-20">
+        <span class="font-14">October 12, 2024</span>
+        <h3>Blog Post Title</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab ill...</p>
+        <span class ="pb-5 readmore mt-10 weight-700">Read More</span>
+      </div>
+    </div>
+     <div class="rflex  flex-row column-gap-30 flex-wrap">
+      <img class="w-20" src="https://picsum.photos/300/200">
+      <div class="w-50 flex-column jc-center row-gap-20">
+        <span class="font-14">October 12, 2024</span>
+        <h3>Blog Post Title</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab ill...</p>
+        <span class ="pb-5 readmore mt-10 weight-700">Read More</span>
+      </div>
+    </div>
+     <div class="rflex flex-row column-gap-30 flex-wrap">
+      <img class="w-20" src="https://picsum.photos/300/200">
+      <div class="w-50 flex-column jc-center row-gap-20">
+        <span class="font-14">October 12, 2024</span>
+        <h3>Blog Post Title</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab ill...</p>
+        <span class ="pb-5 readmore mt-10 weight-700">Read More</span>
+      </div>
+    </div>
+     <div class="rflex flex-row column-gap-30 flex-wrap">
+      <img class="w-20" src="https://picsum.photos/300/200">
+      <div class="w-50 flex-column jc-center row-gap-20">
+        <span class="font-14">October 12, 2024</span>
+        <h3>Blog Post Title</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab ill...</p>
+        <span class ="pb-5 readmore mt-10 weight-700">Read More</span>
+      </div>
+    </div>
+     <div class="rflex flex-row column-gap-30 flex-wrap">
+      <img class="w-20" src="https://picsum.photos/300/200">
+      <div class="w-50 flex-column jc-center row-gap-20">
+        <span class="font-14">October 12, 2024</span>
+        <h3>Blog Post Title</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab ill...</p>
+        <span class ="pb-5 readmore mt-10 weight-700">Read More</span>
+      </div>
+    </div>
+     <div class="rflex flex-row column-gap-30 flex-wrap">
+      <img class="w-20" src="https://picsum.photos/300/200">
+      <div class="w-50 flex-column jc-center row-gap-20">
+        <span class="font-14">October 12, 2024</span>
+        <h3>Blog Post Title</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab ill...</p>
+        <span class ="pb-5 readmore mt-10 weight-700">Read More</span>
+      </div>
+    </div>
+     <div class="rflex flex-row column-gap-30 flex-wrap">
+      <img class="w-20" src="https://picsum.photos/300/200">
+      <div class="w-50 flex-column jc-center row-gap-20">
+        <span class="font-14">October 12, 2024</span>
+        <h3>Blog Post Title</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab ill...</p>
+        <span class ="pb-5 readmore mt-10 weight-700">Read More</span>
+      </div>
+    </div>
+     <div class="rflex flex-row column-gap-30 flex-wrap">
+      <img class="w-20" src="https://picsum.photos/300/200">
+      <div class="w-50 flex-column jc-center row-gap-20">
+        <span class="font-14">October 12, 2024</span>
+        <h3>Blog Post Title</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab ill...</p>
+        <span class ="pb-5 readmore mt-10 weight-700">Read More</span>
+      </div>
+    </div>
+   </div>
+</main>
+<style>
+  
+  .js-end{
+    margin-left: auto;
+  }
+  select{
+    border:black 1px solid;
+    border-radius:4px;
+  }
+  .readmore{
+    border-bottom:black 2px solid;
+    width:90px;
+  }
+  @media only screen and (max-width: 980px) {
+      .rflex{
+      flex-direction:column !important;
+        border:1px grey solid !important;
+        padding:10px;
+        
+    }
+    .rflex img,.rflex div{
+      width:100%;
+      margin-bottom:10px;
+    }
+    .m-50{
+      margin:20px !important;
+    }
+    .font-18,.font-16{
+      font-size:14px !important;
+    }
+  }
+
+</style>
+
+
+{% endblock %}
