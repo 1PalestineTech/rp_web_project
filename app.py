@@ -307,9 +307,13 @@ if __name__ == "__main__":
    app.run(host='0.0.0.0')
 '''
 from flask import Flask
-from routes import main, myths
+from routes import main, myths,article
+
 app = Flask(__name__)
+
 app.register_blueprint(main.main_bp)
 app.register_blueprint(myths.myths_bp)
+app.register_blueprint(article.article_bp)
+
 if __name__ == "__main__":
    app.run(host='0.0.0.0')
