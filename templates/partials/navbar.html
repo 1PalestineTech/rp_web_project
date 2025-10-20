@@ -1,15 +1,15 @@
 <nav class="p-30 pl-50  flex-column row-gap-20 w-100">
   <div class="column-gap-20 flex-row ai-center jc-spaceb">
-    <div>
+    <a href="{{url_for('main.index')}}">
       <img src="{{url_for('static',filename='Images/black_logo.png')}}" alt="1Palestine Logo" width="150px">
-    </div>
+    </a>
   
     <div class="nav-toggle flex-row column-gap-30 weight-700">
-      <span><a>History</a></span>
-      <span><a>Articles</a></span>
-      <span><a>Zionist Myths</a></span>
+      <span><a href="{{url_for('main.history')}}">History</a></span>
+      <span><a href="{{url_for('article.articles')}}">Articles</a></span>
+      <span><a href="{{url_for('myths.myths')}}">Zionist Myths</a></span>
       <span><a>Resources</a></span>
-      <span><a>About Us</a></span>
+      <span><a  href="{{url_for('main.about')}}">About Us</a></span>
     </div>
     <div>
       <button class="weight-700">Take Action</button>
@@ -20,16 +20,18 @@
   </div>
   <div class="toggle_links">
     <div class="flex-column row-gap-10 weight-700 jc-end">
-      <span><a>History</a></span>
-      <span><a>Articles</a></span>
-      <span><a>Zionist Myths</a></span>
+      <span><a href="{{url_for('main.history')}}">History</a></span>
+      <span><a href="{{url_for('article.articles')}}">Articles</a></span>
+      <span><a href="{{url_for('myths.myths')}}">Zionist Myths</a></span>
       <span><a>Resources</a></span>
-      <span><a>About Us</a></span>
+      <span><a href="{{url_for('main.about')}}">About Us</a></span>
     </div>
   </div>
   </nav>
 <style>
-  
+   nav a,nav a:hover,nav a:active{
+       color:black;
+    }
   nav button{
     border:none;
     border-radius:5px;

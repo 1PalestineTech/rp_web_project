@@ -2,15 +2,15 @@
     <div class="mt-50 flex-column row-gap-20">
         <div class="flex-row row-gap-30 flex-wrap">
             <div class="flex-column row-gap-20">
-                <div>
+                <a href="{{url_for('main.index')}}">
                 <img src="{{url_for('static',filename='Images/white_logo.png')}}" alt="1Palestine Logo" width="150px">
-                </div>
+                </a>
                 <div class="flex-row column-gap-30">
-                    <span><a>History</a></span>
-                    <span><a>Articles</a></span>
-                    <span><a>Zionist Myths</a></span>
-                    <span><a>Resources</a></span>
-                    <span><a>About Us</a></span>
+                    <span><a href="{{url_for('main.history')}}">History</a></span>
+                    <span><a href="{{url_for('article.articles')}}">Articles</a></span>
+                    <span><a href="{{url_for('myths.myths')}}">Zionist Myths</a></span>
+                    <span><a >Resources</a></span>
+                    <span><a href="{{url_for('main.about')}}">About Us</a></span>
                     <span><a>Take Action</a></span>
                 </div>
             </div>
@@ -26,6 +26,9 @@
     </div>
 </footer>
 <style>
+    footer a,footer a:hover,footer a:active{
+       color:white;
+    }
   footer div div div{
     flex-grow:3;
   }
