@@ -152,5 +152,24 @@ summary {
     }
 }
 </style>
-
+<script>
+  
+document.querySelectorAll("summary").forEach(item=>item.onclick=(e)=>{
+    let el;
+    if(e.target.tagName =="SUMMARY"){
+    el =   e.target.querySelector(".plus")
+    }
+    else{
+        el =e.target.parentElement.querySelector(".plus")
+    }
+    if(el.style.transform=='rotateZ(45deg)'){
+        el.style.transform='rotateZ(0deg)'
+    }
+    else{
+         el.style.transform='rotateZ(45deg)'
+        
+    }
+    
+})
+</script>
 {% endblock %}
